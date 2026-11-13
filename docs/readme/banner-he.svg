@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" font-family="'Segoe UI',Rubik,system-ui,-apple-system,Arial,sans-serif">
+<defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFD5C9"/><stop offset=".55" stop-color="#FBD5E0"/><stop offset="1" stop-color="#DAD5FF"/>
+    </linearGradient>
+    <radialGradient id="plate" cx=".45" cy=".4" r=".7">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3F0FF"/>
+    </radialGradient>
+    <style>
+      .spin{transform-origin:80px 80px;animation:spin 14s linear infinite}
+      .pulse{transform-origin:122px 38px;animation:pulse 2.4s ease-in-out infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      @keyframes pulse{0%,100%{transform:scale(.8);opacity:.6}50%{transform:scale(1.15);opacity:1}}
+      @media (prefers-reduced-motion:reduce){.spin,.pulse{animation:none}}
+    </style>
+  
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF4EF"/><stop offset=".5" stop-color="#FFF9F6"/><stop offset="1" stop-color="#F3F0FF"/></linearGradient>
+<linearGradient id="tt" x1="0" x2="1"><stop offset="0" stop-color="#A8483A"/><stop offset=".5" stop-color="#A03A5C"/><stop offset="1" stop-color="#5548C8"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="38"/></filter>
+<style>
+.b{animation:fl 9s ease-in-out infinite}.b2{animation-delay:-3s}.b3{animation-delay:-6s}
+@keyframes fl{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-18px)}}
+.rise{animation:rise 1s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.15s}.d2{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.chip{animation:pop .6s cubic-bezier(.3,1.6,.5,1) both;transform-box:fill-box;transform-origin:center}
+@keyframes pop{from{opacity:0;transform:scale(.6)}}
+.dot{animation:tw 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes tw{0%,100%{opacity:.3;transform:scale(.7)}50%{opacity:1;transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></defs>
+<rect width="1200" height="360" rx="36" fill="url(#sky)"/>
+<g filter="url(#blur)" opacity=".85"><circle class="b" cx="140" cy="70" r="120" fill="#FFD5C9"/><circle class="b b2" cx="1080" cy="90" r="130" fill="#DAD5FF"/><circle class="b b3" cx="620" cy="360" r="140" fill="#D9F3E7"/><circle class="b" cx="900" cy="300" r="90" fill="#FBD5E0"/></g>
+<g class="dot"><circle cx="190" cy="250" r="7" fill="#FFD5C9"/></g><g class="dot" style="animation-delay:-1s"><circle cx="1010" cy="250" r="9" fill="#DAD5FF"/></g><g class="dot" style="animation-delay:-2s"><circle cx="300" cy="90" r="6" fill="#D9F3E7"/></g><g class="dot" style="animation-delay:-1.5s"><circle cx="930" cy="70" r="6" fill="#FBD5E0"/></g>
+<g class="rise"><g transform="translate(380 52) scale(.62)"><rect x="6" y="6" width="148" height="148" rx="40" fill="url(#bg)"/>
+  <circle cx="80" cy="82" r="50" fill="url(#plate)" stroke="#5548C8" stroke-width="5"/>
+  <circle cx="80" cy="82" r="38" fill="none" stroke="#DAD5FF" stroke-width="3"/>
+  <g class="spin">
+    <g transform="translate(0 2)">
+      <path d="M80 54 L96 70 L80 80 Z" fill="#FFD5C9"/>
+      <path d="M104 74 L104 96 L80 80 Z" fill="#D9F3E7"/>
+      <path d="M96 106 L74 106 L80 80 Z" fill="#FFF1C9"/>
+      <path d="M62 102 L56 80 L80 80 Z" fill="#FBD5E0"/>
+      <path d="M58 66 L74 52 L80 80 Z" fill="#DAD5FF"/>
+    </g>
+  </g>
+  <circle cx="80" cy="82" r="9" fill="#5548C8"/>
+  <circle cx="77" cy="79" r="3" fill="#FFFFFF"/>
+  <g class="pulse"><path d="M122 26 L125 35 L134 38 L125 41 L122 50 L119 41 L110 38 L119 35 Z" fill="#FFFFFF" stroke="#A8483A" stroke-width="2" stroke-linejoin="round"/></g>
+</g>
+<text x="500" y="120" font-size="66" font-weight="800" fill="#2C2668" letter-spacing="-1">Okeat <tspan fill="url(#tt)">Lens</tspan></text></g>
+<text class="rise d1" x="600" y="190" text-anchor="middle" font-size="30" font-weight="700" fill="#2C2668" direction="rtl" unicode-bidi="embed">מה יש בצלחת? מצלמים, ו-Okeat Lens יודעת.</text>
+<text class="rise d2" x="600" y="232" text-anchor="middle" font-size="20" fill="#5f5a8f" direction="rtl" unicode-bidi="embed">ראייה ממוחשבת שהופכת תמונה של אוכל לרמזים על כשרות, טבעונות וללא גלוטן</text>
+<g class="chip" style="animation-delay:0.6s"><rect x="265.0" y="268" width="160" height="40" rx="20" fill="#DAD5FF"/><text x="345.0" y="294" text-anchor="middle" font-size="17" font-weight="700" fill="#5548C8" direction="rtl" unicode-bidi="embed">101 מנות</text></g><g class="chip" style="animation-delay:0.75s"><rect x="435.0" y="268" width="160" height="40" rx="20" fill="#FFD5C9"/><text x="515.0" y="294" text-anchor="middle" font-size="17" font-weight="700" fill="#A8483A" direction="rtl" unicode-bidi="embed">MobileNetV3</text></g><g class="chip" style="animation-delay:0.8999999999999999s"><rect x="605.0" y="268" width="160" height="40" rx="20" fill="#D9F3E7"/><text x="685.0" y="294" text-anchor="middle" font-size="17" font-weight="700" fill="#1F7350" direction="rtl" unicode-bidi="embed">FastAPI</text></g><g class="chip" style="animation-delay:1.0499999999999998s"><rect x="775.0" y="268" width="160" height="40" rx="20" fill="#FBD5E0"/><text x="855.0" y="294" text-anchor="middle" font-size="17" font-weight="700" fill="#A03A5C" direction="rtl" unicode-bidi="embed">עב · EN</text></g>
+</svg>

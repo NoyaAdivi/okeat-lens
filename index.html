@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Okeat Lens · מה יש בצלחת?</title>
+  <meta name="description" content="Okeat Lens: recognize a dish from a photo and get kosher, vegan and gluten-free hints for Okeat.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <header class="top">
+    <a class="brand" href="https://github.com/NoyaAdivi/okeat-lens">
+      <img src="logo.svg" alt="" width="44" height="44">
+      <span>Okeat <b>Lens</b></span>
+    </a>
+    <div class="top-actions">
+      <a class="chip-link" href="https://okeat.vercel.app" data-i18n="openOkeat">ל-Okeat</a>
+      <button id="langBtn" class="lang" type="button" aria-label="Switch language">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow" data-i18n="eyebrow">ראייה ממוחשבת · Food-101</p>
+      <h1><span data-i18n="title1">מה יש</span> <span class="grad" data-i18n="title2">בצלחת?</span></h1>
+      <p class="lead" data-i18n="lead">מצלמים מנה, ו-Okeat Lens מזהה אותה ומציע אם היא כנראה טבעונית, צמחונית, ללא גלוטן ואיזה סוג כשרות מתאים לה.</p>
+    </section>
+
+    <section class="card upload" id="drop" tabindex="0" aria-describedby="dropHint">
+      <input id="file" type="file" accept="image/*" hidden>
+      <input id="camera" type="file" accept="image/*" capture="environment" hidden>
+      <div class="preview" id="preview">
+        <div class="placeholder" id="placeholder">
+          <div class="plate-anim" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p id="dropHint" data-i18n="drop">גררו לכאן תמונה של אוכל</p>
+          <div class="btns">
+            <button class="btn primary" id="pickBtn" type="button" data-i18n="pick">בחירת תמונה</button>
+            <button class="btn soft" id="camBtn" type="button" data-i18n="camera">צילום</button>
+          </div>
+        </div>
+        <img id="img" alt="" hidden>
+        <div class="scan" id="scan" hidden></div>
+      </div>
+
+      <div class="samples">
+        <span data-i18n="tryOne">או נסו דוגמה:</span>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=640" data-i18n="sPizza">🍕 פיצה</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=640" data-i18n="sBurger">🍔 המבורגר</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=640" data-i18n="sIce">🍨 גלידה</button>
+      </div>
+    </section>
+
+    <section class="card result" id="result" hidden aria-live="polite">
+      <div class="result-head">
+        <div>
+          <p class="eyebrow" data-i18n="itLooks">זה נראה כמו</p>
+          <h2 id="dishName">…</h2>
+          <p class="sub" id="dishOther"></p>
+        </div>
+        <div class="ring" id="ring" style="--p:0"><span id="ringVal">0%</span></div>
+      </div>
+      <div class="chips" id="chips"></div>
+      <p class="note" data-i18n="note">אלה רמזים לפי מתכון נפוץ, לא מידע מאומת. ב-Okeat רק הקהילה מאשרת.</p>
+      <h3 data-i18n="topGuesses">עוד ניחושים</h3>
+      <ol class="bars" id="bars"></ol>
+      <a class="btn primary wide" id="okeatBtn" href="https://okeat.vercel.app/map" data-i18n="findOkeat">חיפוש מקומות ב-Okeat 🗺️</a>
+    </section>
+
+    <section class="card settings">
+      <details>
+        <summary data-i18n="engine">מנוע זיהוי</summary>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="mode" value="browser" checked> <span data-i18n="mBrowser">בדפדפן (מיידי)</span></label>
+          <label><input type="radio" name="mode" value="api"> <span data-i18n="mApi">מודל Food-101 (API)</span></label>
+        </div>
+        <label class="field" id="apiField" hidden>
+          <span data-i18n="apiUrl">כתובת ה-API</span>
+          <input id="apiUrl" type="url" value="http://localhost:8000" dir="ltr">
+        </label>
+        <p class="sub" data-i18n="engineHelp">"בדפדפן" מריץ MobileNet על המכשיר שלכם ומכיר כ-20 מאכלים. "API" משתמש במודל שאימנתי על 101 מנות.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span data-i18n="madeBy">נבנה באהבה על ידי</span>
+    <a href="https://www.linkedin.com/in/noya-adivi/">Noya Adivi</a> ·
+    <a href="https://github.com/NoyaAdivi/okeat-lens">GitHub</a> ·
+    <a href="https://okeat.vercel.app">Okeat</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

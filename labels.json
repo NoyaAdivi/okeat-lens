@@ -1,0 +1,903 @@
+{
+ "dataset": "Food-101",
+ "note": "Diet tags describe a typical recipe and are hints, never confirmed facts. Okeat only trusts community-verified claims.",
+ "classes": [
+  {
+   "key": "apple_pie",
+   "en": "Apple pie",
+   "he": "פאי תפוחים",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "baby_back_ribs",
+   "en": "Baby back ribs",
+   "he": "צלעות חזיר בגריל",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "baklava",
+   "en": "Baklava",
+   "he": "בקלאווה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "beef_carpaccio",
+   "en": "Beef carpaccio",
+   "he": "קרפצ'יו בקר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "beef_tartare",
+   "en": "Beef tartare",
+   "he": "טרטר בקר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "beet_salad",
+   "en": "Beet salad",
+   "he": "סלט סלק",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "beignets",
+   "en": "Beignets",
+   "he": "בנייה צרפתי",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "bibimbap",
+   "en": "Bibimbap",
+   "he": "ביבימבאפ",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "bread_pudding",
+   "en": "Bread pudding",
+   "he": "פודינג לחם",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "breakfast_burrito",
+   "en": "Breakfast burrito",
+   "he": "בוריטו בוקר",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "bruschetta",
+   "en": "Bruschetta",
+   "he": "ברוסקטה",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "caesar_salad",
+   "en": "Caesar salad",
+   "he": "סלט קיסר",
+   "tags": [],
+   "kosher": "dairy"
+  },
+  {
+   "key": "cannoli",
+   "en": "Cannoli",
+   "he": "קנולי",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "caprese_salad",
+   "en": "Caprese salad",
+   "he": "סלט קפרזה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "carrot_cake",
+   "en": "Carrot cake",
+   "he": "עוגת גזר",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "ceviche",
+   "en": "Ceviche",
+   "he": "סביצ'ה",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "cheese_plate",
+   "en": "Cheese plate",
+   "he": "פלטת גבינות",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "cheesecake",
+   "en": "Cheesecake",
+   "he": "עוגת גבינה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "chicken_curry",
+   "en": "Chicken curry",
+   "he": "קארי עוף",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "chicken_quesadilla",
+   "en": "Chicken quesadilla",
+   "he": "קסדיה עוף",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "chicken_wings",
+   "en": "Chicken wings",
+   "he": "כנפי עוף",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "chocolate_cake",
+   "en": "Chocolate cake",
+   "he": "עוגת שוקולד",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "chocolate_mousse",
+   "en": "Chocolate mousse",
+   "he": "מוס שוקולד",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "churros",
+   "en": "Churros",
+   "he": "צ'ורוס",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "clam_chowder",
+   "en": "Clam chowder",
+   "he": "מרק צדפות",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "club_sandwich",
+   "en": "Club sandwich",
+   "he": "קלאב סנדוויץ'",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "crab_cakes",
+   "en": "Crab cakes",
+   "he": "קציצות סרטנים",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "creme_brulee",
+   "en": "Crème brûlée",
+   "he": "קרם ברולה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "croque_madame",
+   "en": "Croque madame",
+   "he": "קרוק מדאם",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "cup_cakes",
+   "en": "Cupcakes",
+   "he": "קאפקייקס",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "deviled_eggs",
+   "en": "Deviled eggs",
+   "he": "ביצים ממולאות",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "donuts",
+   "en": "Donuts",
+   "he": "דונאטס",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "dumplings",
+   "en": "Dumplings",
+   "he": "כופתאות",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "edamame",
+   "en": "Edamame",
+   "he": "אדממה",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "eggs_benedict",
+   "en": "Eggs benedict",
+   "he": "ביצים בנדיקט",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "escargots",
+   "en": "Escargots",
+   "he": "אסקרגו (שבלולים)",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "falafel",
+   "en": "Falafel",
+   "he": "פלאפל",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "filet_mignon",
+   "en": "Filet mignon",
+   "he": "פילה מיניון",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "fish_and_chips",
+   "en": "Fish and chips",
+   "he": "פיש אנד צ'יפס",
+   "tags": [],
+   "kosher": "parve"
+  },
+  {
+   "key": "foie_gras",
+   "en": "Foie gras",
+   "he": "כבד אווז",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "french_fries",
+   "en": "French fries",
+   "he": "צ'יפס",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "french_onion_soup",
+   "en": "French onion soup",
+   "he": "מרק בצל צרפתי",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "french_toast",
+   "en": "French toast",
+   "he": "פרנץ' טוסט",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "fried_calamari",
+   "en": "Fried calamari",
+   "he": "קלמרי מטוגן",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "fried_rice",
+   "en": "Fried rice",
+   "he": "אורז מטוגן",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "frozen_yogurt",
+   "en": "Frozen yogurt",
+   "he": "פרוזן יוגורט",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "garlic_bread",
+   "en": "Garlic bread",
+   "he": "לחם שום",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "gnocchi",
+   "en": "Gnocchi",
+   "he": "ניוקי",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "greek_salad",
+   "en": "Greek salad",
+   "he": "סלט יווני",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "grilled_cheese_sandwich",
+   "en": "Grilled cheese sandwich",
+   "he": "טוסט גבינה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "grilled_salmon",
+   "en": "Grilled salmon",
+   "he": "סלמון בגריל",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "guacamole",
+   "en": "Guacamole",
+   "he": "גוואקמולי",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "gyoza",
+   "en": "Gyoza",
+   "he": "גיוזה",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "hamburger",
+   "en": "Hamburger",
+   "he": "המבורגר",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "hot_and_sour_soup",
+   "en": "Hot and sour soup",
+   "he": "מרק חמוץ חריף",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "hot_dog",
+   "en": "Hot dog",
+   "he": "נקניקייה בלחמנייה",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "huevos_rancheros",
+   "en": "Huevos rancheros",
+   "he": "ביצי ראנצ'רוס",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "hummus",
+   "en": "Hummus",
+   "he": "חומוס",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "ice_cream",
+   "en": "Ice cream",
+   "he": "גלידה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "lasagna",
+   "en": "Lasagna",
+   "he": "לזניה",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "lobster_bisque",
+   "en": "Lobster bisque",
+   "he": "ביסק לובסטר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "lobster_roll_sandwich",
+   "en": "Lobster roll",
+   "he": "כריך לובסטר",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "macaroni_and_cheese",
+   "en": "Mac and cheese",
+   "he": "מקרוני וגבינה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "macarons",
+   "en": "Macarons",
+   "he": "מקרונים",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "miso_soup",
+   "en": "Miso soup",
+   "he": "מרק מיסו",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "mussels",
+   "en": "Mussels",
+   "he": "מולים",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "nachos",
+   "en": "Nachos",
+   "he": "נאצ'וס",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "omelette",
+   "en": "Omelette",
+   "he": "חביתה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "onion_rings",
+   "en": "Onion rings",
+   "he": "טבעות בצל",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "oysters",
+   "en": "Oysters",
+   "he": "צדפות אויסטר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "pad_thai",
+   "en": "Pad thai",
+   "he": "פאד תאי",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "paella",
+   "en": "Paella",
+   "he": "פאייה",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "pancakes",
+   "en": "Pancakes",
+   "he": "פנקייקים",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "panna_cotta",
+   "en": "Panna cotta",
+   "he": "פנה קוטה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "peking_duck",
+   "en": "Peking duck",
+   "he": "ברווז פקיני",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "pho",
+   "en": "Pho",
+   "he": "פו",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "pizza",
+   "en": "Pizza",
+   "he": "פיצה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "pork_chop",
+   "en": "Pork chop",
+   "he": "צלע חזיר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "poutine",
+   "en": "Poutine",
+   "he": "פוטין",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "prime_rib",
+   "en": "Prime rib",
+   "he": "צלי צלעות בקר",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "pulled_pork_sandwich",
+   "en": "Pulled pork sandwich",
+   "he": "כריך פולד פורק",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "ramen",
+   "en": "Ramen",
+   "he": "ראמן",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "ravioli",
+   "en": "Ravioli",
+   "he": "רביולי",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "red_velvet_cake",
+   "en": "Red velvet cake",
+   "he": "עוגת רד ולווט",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "risotto",
+   "en": "Risotto",
+   "he": "ריזוטו",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "samosa",
+   "en": "Samosa",
+   "he": "סמוסה",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "sashimi",
+   "en": "Sashimi",
+   "he": "סשימי",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "scallops",
+   "en": "Scallops",
+   "he": "סקלופס",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "seaweed_salad",
+   "en": "Seaweed salad",
+   "he": "סלט אצות",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "shrimp_and_grits",
+   "en": "Shrimp and grits",
+   "he": "שרימפס וגריטס",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "spaghetti_bolognese",
+   "en": "Spaghetti bolognese",
+   "he": "ספגטי בולונז",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "spaghetti_carbonara",
+   "en": "Spaghetti carbonara",
+   "he": "ספגטי קרבונרה",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "spring_rolls",
+   "en": "Spring rolls",
+   "he": "אגרולים",
+   "tags": [
+    "vegan",
+    "vegetarian"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "steak",
+   "en": "Steak",
+   "he": "סטייק",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat"
+  },
+  {
+   "key": "strawberry_shortcake",
+   "en": "Strawberry shortcake",
+   "he": "עוגת תותים וקצפת",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "sushi",
+   "en": "Sushi",
+   "he": "סושי",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "tacos",
+   "en": "Tacos",
+   "he": "טאקו",
+   "tags": [],
+   "kosher": "meat"
+  },
+  {
+   "key": "takoyaki",
+   "en": "Takoyaki",
+   "he": "טקויאקי",
+   "tags": [],
+   "kosher": "not_kosher"
+  },
+  {
+   "key": "tiramisu",
+   "en": "Tiramisu",
+   "he": "טירמיסו",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  },
+  {
+   "key": "tuna_tartare",
+   "en": "Tuna tartare",
+   "he": "טרטר טונה",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve"
+  },
+  {
+   "key": "waffles",
+   "en": "Waffles",
+   "he": "וופל",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" font-family="'Segoe UI',Rubik,system-ui,-apple-system,Arial,sans-serif">
+<style>
+.p{animation:in .9s cubic-bezier(.2,.8,.2,1) both}@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.s{animation:sp 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}@keyframes sp{0%,100%{transform:scale(.75) rotate(0)}50%{transform:scale(1.15) rotate(45deg)}}
+.l{stroke-dasharray:6 10;animation:dash 6s linear infinite}@keyframes dash{to{stroke-dashoffset:-160}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<line class="l" x1="40" y1="60" x2="380" y2="60" stroke="#DAD5FF" stroke-width="4" stroke-linecap="round"/>
+<line class="l" x1="820" y1="60" x2="1160" y2="60" stroke="#DAD5FF" stroke-width="4" stroke-linecap="round"/>
+<g class="p"><rect x="400" y="14" width="400" height="92" rx="46" fill="#DAD5FF"/>
+<text x="600" y="58" text-anchor="middle" font-size="30" font-weight="800" fill="#5548C8" >🧰 Tech stack</text>
+<text x="600" y="88" text-anchor="middle" font-size="16" fill="#5548C8" opacity=".85" >what it's built with</text></g>
+<g class="s"><path d="M380 30 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#5548C8" opacity=".6"/></g>
+<g class="s" style="animation-delay:-1.3s"><path d="M820 70 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#5548C8" opacity=".6"/></g>
+</svg>
