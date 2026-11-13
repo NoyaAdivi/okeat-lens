@@ -2,7 +2,7 @@
   <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-en.svg" width="100%" alt="Okeat Lens: recognize a dish from a photo and get kosher, vegan and gluten-free hints"></a>
 </p>
 
-<p align="center"><a href="README.he.md"><img src="docs/readme/lang-he.svg" height="48" alt="לגרסה בעברית"></a></p>
+<p align="center"><a href="README.he.md"><img src="docs/readme/lang-he.svg" height="44" alt="לגרסה בעברית"></a></p>
 
 <p align="center">
   <a href="https://noyaadivi.github.io/okeat-lens/"><img src="https://img.shields.io/badge/Try_the_live_demo-FFD5C9?style=for-the-badge&logo=googlechrome&logoColor=A8483A" alt="Try the live demo"></a>

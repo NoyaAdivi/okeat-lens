@@ -4,7 +4,7 @@
   <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-he.svg" width="100%" alt="Okeat Lens: מזהה מנה מתמונה ומציע רמזים על כשרות, טבעונות וללא גלוטן"></a>
 </p>
 
-<p align="center"><a href="README.md"><img src="docs/readme/lang-en.svg" height="48" alt="English version"></a></p>
+<p align="center"><a href="README.md"><img src="docs/readme/lang-en.svg" height="44" alt="English version"></a></p>
 
 <p align="center">
   <a href="https://noyaadivi.github.io/okeat-lens/"><img src="https://img.shields.io/badge/לדמו_החי-FFD5C9?style=for-the-badge&logo=googlechrome&logoColor=A8483A" alt="לדמו החי"></a>
