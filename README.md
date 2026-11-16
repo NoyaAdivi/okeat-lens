@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-en.svg" width="100%" alt="Okeat Lens: recognize a dish from a photo and get kosher, vegan and gluten-free hints"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-en.svg" width="100%" alt="Okeat Lens: recognize a dish from a photo and see its nutrition, nutrient families, allergens and diet hints"></a>
 </p>
 
 <p align="center"><a href="README.he.md"><img src="docs/readme/lang-he.svg" height="44" alt="לגרסה בעברית"></a></p>
@@ -17,7 +17,7 @@
   <a href="https://github.com/NoyaAdivi/okeat-lens"><img src="https://img.shields.io/github/languages/top/NoyaAdivi/okeat-lens?color=D9F3E7&labelColor=1F7350" alt="Top language"></a>
 </p>
 
-<h3 align="center">Point your camera at a plate. Know what you can eat.</h3>
+<h3 align="center">Point your camera at a plate. See what's in it and what you can eat.</h3>
 
 <p align="center">
   Okeat Lens is a Computer Vision model that recognizes <b>101 dishes</b> from a single photo<br>
@@ -98,7 +98,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-en.svg" width="100%" alt="See it in action"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screen-en.png" width="80%" alt="Okeat Lens recognizing hummus with 93% confidence: vegan, vegetarian, gluten-free and parve"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screen-en.png" width="80%" alt="Okeat Lens recognizing hummus with 93% confidence: 216 calories, macros, the six nutrient families and a balanced plate"></a>
 </p>
 
 <p align="center">

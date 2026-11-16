@@ -1,7 +1,7 @@
 <div dir="rtl">
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-he.svg" width="100%" alt="Okeat Lens: מזהה מנה מתמונה ומציע רמזים על כשרות, טבעונות וללא גלוטן"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/readme/banner-he.svg" width="100%" alt="Okeat Lens: מזהה מנה מתמונה ומראה ערכים תזונתיים, אבות מזון, אלרגנים ורמזים על כשרות"></a>
 </p>
 
 <p align="center"><a href="README.md"><img src="docs/readme/lang-en.svg" height="44" alt="English version"></a></p>
@@ -19,7 +19,7 @@
   <a href="https://github.com/NoyaAdivi/okeat-lens"><img src="https://img.shields.io/github/languages/top/NoyaAdivi/okeat-lens?color=D9F3E7&labelColor=1F7350" alt="Top language"></a>
 </p>
 
-<h3 align="center">מכוונים מצלמה לצלחת. יודעים מה אפשר לאכול.</h3>
+<h3 align="center">מכוונים מצלמה לצלחת. רואים מה יש בה ומה אפשר לאכול.</h3>
 
 <p align="center">
   Okeat Lens הוא מודל ראייה ממוחשבת שמזהה <b>101 מנות</b> מתמונה אחת<br>
@@ -100,7 +100,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-he.svg" width="100%" alt="ככה זה נראה"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screen-he.png" width="80%" alt="Okeat Lens מזהה חומוס בביטחון של 93%: טבעוני, צמחוני, ללא גלוטן ופרווה"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screen-he.png" width="80%" alt="Okeat Lens מזהה חומוס בביטחון של 93%: 216 קלוריות, אבות המזון וצלחת מאוזנת"></a>
 </p>
 
 <p align="center">

@@ -271,6 +271,7 @@ function render(items, animate = true) {
   bars.previousElementSibling.hidden = bars.hidden = items.length < 2;
 
   $("result").hidden = false;
+  window.revealAll?.();
   if (animate) {
     $("result").scrollIntoView({ behavior: "smooth", block: "start" });
     if (!picked && best.confidence >= 0.8) confetti();
@@ -641,6 +642,24 @@ function setup() {
     io.unobserve(e.target);
   }));
   io.observe(document.querySelector(".stats"));
+
+  /* polish: sticky header, scroll reveal, tilt and button shine */
+  addEventListener("scroll", () => $("top").classList.toggle("stuck", scrollY > 10), { passive: true });
+  const rv = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), rv.unobserve(e.target))), { threshold: 0.15 });
+  window.revealAll = () => document.querySelectorAll(".rv:not(.in)").forEach((el) => rv.observe(el));
+  revealAll();
+  if (!reduced && matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".upload, .stats div, .fam").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.setProperty("--rx", (-y * 5).toFixed(2) + "deg");
+        el.style.setProperty("--ry", (x * 6).toFixed(2) + "deg");
+        el.style.setProperty("--mx", (x + 0.5) * 100 + "%");
+        el.style.setProperty("--my", (y + 0.5) * 100 + "%");
+      });
+      el.addEventListener("pointerleave", () => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); });
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", setup);
