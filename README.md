@@ -53,7 +53,7 @@
       <ul>
         <li><b>9 allergens</b> per dish, next to the kosher type</li>
         <li><b>My meal</b> adds up dishes, <b>compare</b> two dishes</li>
-        <li><b>Share card</b> image, recent scans, pick a dish by hand</li>
+        <li><b>Share card</b>, share your meal, 🎲 surprise me, pick a dish by hand</li>
       </ul>
     </td>
   </tr>
@@ -79,7 +79,7 @@
         <li><b>Vegan, vegetarian, gluten-free</b> per dish</li>
         <li><b>Kosher type:</b> meat, dairy, parve or likely not kosher</li>
         <li><b>Honest by design:</b> hints are never marked as verified</li>
-        <li><a href="docs/INTEGRATION.md"><b>Plugs into Okeat</b></a> to open the map with the right filters</li>
+        <li><a href="docs/INTEGRATION.md"><b>Plugs into Okeat</b></a>: one tap opens the map with the dish's diet and kosher filters</li>
       </ul>
     </td>
     <td valign="top" width="33%">

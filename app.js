@@ -12,7 +12,7 @@ const I18N = {
     lead: "מצלמים מנה, ו-Okeat Lens מזהה אותה ומראה כמה קלוריות, חלבון ופחמימות יש בה, את אבות המזון, האלרגנים, ואם היא כנראה טבעונית, ללא גלוטן ואיזו כשרות מתאימה לה.",
     stDishes: "מנות ומאכלים", stFam: "אבות מזון", stAll: "אלרגנים", stUp: "שפות",
     drop: "גררו לכאן תמונה של אוכל, או הדביקו עם Ctrl+V", pick: "בחירת תמונה", camera: "צילום", browse: "בלי תמונה: בחירה מהרשימה",
-    tryOne: "או נסו דוגמה:", sPizza: "🍕 פיצה", sBurger: "🍔 המבורגר", sIce: "🍨 גלידה", sSushi: "🍣 סושי", recent: "זוהו לאחרונה:",
+    tryOne: "או נסו דוגמה:", sPizza: "🍕 פיצה", sBurger: "🍔 המבורגר", sIce: "🍨 גלידה", sSushi: "🍣 סושי", recent: "זוהו לאחרונה:", surprise: "🎲 תפתיעו אותי", shareMeal: "📤 שיתוף", copied: "הסיכום הועתק ✓", mealTxt: "הארוחה שלי ב-Okeat Lens", allergenQ: "מחפשים מנה בלי אלרגן? בחרו מנה ובדקו את האלרגנים שלה",
     itLooks: "זה נראה כמו", youPicked: "בחרתם", sure: "ביטחון", notThis: "לא זה? בחירת מנה אחרת ✏️",
     portion: "כמה אכלתם?", serving: "מנה", gram: "גרם", kcal: "קלוריות",
     protein: "חלבון", carbs: "פחמימות", fat: "שומן", fiber: "סיבים", sugar: "סוכר", sodium_mg: "נתרן",
@@ -44,7 +44,7 @@ const I18N = {
     lead: "Snap a dish and Okeat Lens recognizes it, then shows its calories, protein and carbs, the six nutrient families, allergens, and whether it's likely vegan, gluten-free and which kind of kosher fits it.",
     stDishes: "dishes and foods", stFam: "nutrient families", stAll: "allergens", stUp: "languages",
     drop: "Drop a food photo here, or paste with Ctrl+V", pick: "Choose a photo", camera: "Take a photo", browse: "No photo: pick from the list",
-    tryOne: "or try one:", sPizza: "🍕 Pizza", sBurger: "🍔 Burger", sIce: "🍨 Ice cream", sSushi: "🍣 Sushi", recent: "Recently spotted:",
+    tryOne: "or try one:", sPizza: "🍕 Pizza", sBurger: "🍔 Burger", sIce: "🍨 Ice cream", sSushi: "🍣 Sushi", recent: "Recently spotted:", surprise: "🎲 Surprise me", shareMeal: "📤 Share", copied: "Summary copied ✓", mealTxt: "My meal on Okeat Lens", allergenQ: "Looking for a dish without an allergen? Pick one and check its allergens",
     itLooks: "This looks like", youPicked: "You picked", sure: "sure", notThis: "Not this? Pick another dish ✏️",
     portion: "How much did you eat?", serving: "serving", gram: "g", kcal: "calories",
     protein: "Protein", carbs: "Carbs", fat: "Fat", fiber: "Fiber", sugar: "Sugar", sodium_mg: "Sodium",
@@ -252,6 +252,12 @@ function render(items, animate = true) {
 
   renderNutrition(animate);
   renderCompare();
+  const q = new URLSearchParams();
+  if (best.tags.length) q.set("diet", best.tags.join(","));
+  if (best.kosher && best.kosher !== "not_kosher") q.set("kosher", best.kosher);
+  q.set("dish", best.en);
+  $("okeatBtn").href = "https://okeat.vercel.app/map?" + q.toString();
+  $("okeatFilters").textContent = [...best.tags, best.kosher].filter((k) => k && k !== "not_kosher").map((k) => t(k)).join(" · ");
 
   const bars = $("bars");
   bars.innerHTML = "";
@@ -622,6 +628,22 @@ function setup() {
   };
   $("mealJump").onclick = () => $("meal").scrollIntoView({ behavior: "smooth", block: "start" });
   $("clearMeal").onclick = () => { meal = []; renderMeal(); };
+  $("shareMeal").onclick = async () => {
+    const tot = mealTotals();
+    const lines = meal.map((m) => `• ${nm(labels[m.key])} ×${m.p}: ${scale(labels[m.key].nutrition, m.p).kcal} kcal`);
+    const text = `${t("mealTxt")} 🍽️\n${lines.join("\n")}\n= ${tot.kcal} kcal · ${t("protein")} ${fmt(tot.protein)} ${t("gram")} · ${t("carbs")} ${fmt(tot.carbs)} ${t("gram")} · ${t("fat")} ${fmt(tot.fat)} ${t("gram")}\n${location.href.split("#")[0]}`;
+    if (navigator.share) { try { await navigator.share({ text }); return; } catch (e) { if (e.name === "AbortError") return; } }
+    try { await navigator.clipboard.writeText(text); toast(t("copied")); } catch { prompt("", text); }
+  };
+  const randomDish = () => { const pool = all.filter((d) => d.key !== current?.key); choose(pool[Math.floor(Math.random() * pool.length)].key); };
+  $("diceBtn").onclick = () => { $("diceBtn").classList.remove("roll"); void $("diceBtn").offsetWidth; $("diceBtn").classList.add("roll"); randomDish(); };
+  document.querySelectorAll(".stats [data-act]").forEach((b) => (b.onclick = () => {
+    const a = b.dataset.act;
+    if (a === "browse") openPicker();
+    else if (a === "random") randomDish();
+    else if (a === "allergen") { toast(t("allergenQ")); openPicker(); }
+    else $("langBtn").click();
+  }));
   $("shareBtn").onclick = shareCard;
   $("pinBtn").onclick = () => {
     if (!current) return;
@@ -649,7 +671,7 @@ function setup() {
   window.revealAll = () => document.querySelectorAll(".rv:not(.in)").forEach((el) => rv.observe(el));
   revealAll();
   if (!reduced && matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".upload, .stats div, .fam").forEach((el) => {
+    document.querySelectorAll(".upload, .stats button, .fam").forEach((el) => {
       el.addEventListener("pointermove", (e) => {
         const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
         el.style.setProperty("--rx", (-y * 5).toFixed(2) + "deg");

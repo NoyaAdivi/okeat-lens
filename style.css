@@ -297,3 +297,13 @@ html[data-theme="dark"] .preview{background-image:repeating-linear-gradient(45de
 .macros li{transition:transform .2s,box-shadow .2s}.macros li:hover{transform:translateY(-2px);box-shadow:0 10px 22px -14px var(--lav-d)}
 ::selection{background:var(--pink);color:var(--pink-d)}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.squiggle path{stroke-dashoffset:0}}
+.stats button{font:inherit;color:inherit;border:0;cursor:pointer;background:var(--card);border-radius:20px;padding:14px 8px;box-shadow:var(--shadow);animation:rise .8s both;position:relative;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .25s ease-out,box-shadow .3s}
+.stats button:nth-child(2){animation-delay:.08s}.stats button:nth-child(3){animation-delay:.16s}.stats button:nth-child(4){animation-delay:.24s}
+.stats button:hover{box-shadow:0 0 0 3px var(--lav),var(--shadow)}
+.stats button::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.45),transparent 45%);opacity:0;transition:opacity .3s}.stats button:hover::after{opacity:1}
+.sample.dice{background:linear-gradient(135deg,var(--peach),var(--pink));color:var(--pink-d)}
+.dice.roll{animation:roll .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes roll{40%{transform:rotate(-200deg) scale(1.15)}100%{transform:rotate(-360deg)}}
+#okeatBtn{flex-direction:column;gap:2px}#okeatBtn small{font-weight:600;opacity:.85;font-size:.82rem}#okeatBtn small:empty{display:none}
+.meal-btns{display:flex;gap:14px}
+.hero .eyebrow{display:table;margin:0 auto 8px}

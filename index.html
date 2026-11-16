@@ -37,10 +37,10 @@
       <svg class="squiggle" viewBox="0 0 300 20" aria-hidden="true"><path d="M2 12 Q 27 2 52 12 T 102 12 T 152 12 T 202 12 T 252 12 T 298 12"/></svg>
       <p class="lead" data-i18n="lead">מצלמים מנה, ו-Okeat Lens מזהה אותה ומראה כמה קלוריות, חלבון ופחמימות יש בה, את אבות המזון, האלרגנים, ואם היא כנראה טבעונית, ללא גלוטן ואיזו כשרות מתאימה לה.</p>
       <div class="stats">
-        <div><b data-count="135">0</b><span data-i18n="stDishes">מנות ומאכלים</span></div>
-        <div><b data-count="6">0</b><span data-i18n="stFam">אבות מזון</span></div>
-        <div><b data-count="9">0</b><span data-i18n="stAll">אלרגנים</span></div>
-        <div><b data-count="2">0</b><span data-i18n="stUp">שפות</span></div>
+        <button type="button" data-act="browse"><b data-count="135">0</b><span data-i18n="stDishes">מנות ומאכלים</span></button>
+        <button type="button" data-act="random"><b data-count="6">0</b><span data-i18n="stFam">אבות מזון</span></button>
+        <button type="button" data-act="allergen"><b data-count="9">0</b><span data-i18n="stAll">אלרגנים</span></button>
+        <button type="button" data-act="lang"><b data-count="2">0</b><span data-i18n="stUp">שפות</span></button>
       </div>
     </section>
 
@@ -68,6 +68,7 @@
         <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=640" data-key="hamburger" data-i18n="sBurger">🍔 המבורגר</button>
         <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=640" data-key="ice_cream" data-i18n="sIce">🍨 גלידה</button>
         <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=640" data-key="sushi" data-i18n="sSushi">🍣 סושי</button>
+        <button type="button" class="sample dice" id="diceBtn" data-i18n="surprise">🎲 תפתיעו אותי</button>
       </div>
       <div class="history" id="history" hidden>
         <span data-i18n="recent">זוהו לאחרונה:</span>
@@ -144,13 +145,13 @@
 
       <h3 class="sec rv" data-ic="🔮" data-i18n="topGuesses">עוד ניחושים</h3>
       <ol class="bars guesses" id="bars"></ol>
-      <a class="btn primary wide" id="okeatBtn" href="https://okeat.vercel.app/map" data-i18n="findOkeat">חיפוש מקומות ב-Okeat 🗺️</a>
+      <a class="btn primary wide" id="okeatBtn" href="https://okeat.vercel.app/map" target="_blank" rel="noopener"><span data-i18n="findOkeat">חיפוש מקומות ב-Okeat 🗺️</span><small id="okeatFilters"></small></a>
     </section>
 
     <section class="card meal" id="meal" hidden>
       <div class="meal-head">
         <h2 data-i18n="mealH">🍽️ הארוחה שלי</h2>
-        <button class="link-btn" id="clearMeal" type="button" data-i18n="clear">ניקוי</button>
+        <div class="meal-btns"><button class="link-btn" id="shareMeal" type="button" data-i18n="shareMeal">📤 שיתוף</button><button class="link-btn" id="clearMeal" type="button" data-i18n="clear">ניקוי</button></div>
       </div>
       <ul class="meal-list" id="mealList"></ul>
       <div class="meal-total">
