@@ -46,3 +46,20 @@ def test_predict_k():
 def test_rejects_non_image():
     r = client.post("/predict", files={"file": ("notes.txt", b"hello", "text/plain")})
     assert r.status_code == 415
+
+
+def test_nutrition_endpoint():
+    body = client.get("/nutrition/pizza?portions=2").json()
+    assert body["portions"] == 2 and body["kcal"] > 0 and "milk" in body["allergens"]
+    assert client.get("/nutrition/shakshuka").status_code == 404
+
+
+def test_meal_endpoint():
+    r = client.post("/meal", json={"items": [{"key": "sushi"}, {"key": "miso_soup", "portions": 2}]})
+    assert r.status_code == 200 and r.json()["kcal"] > 0
+    assert client.post("/meal", json={"items": []}).status_code == 422
+
+
+def test_predict_has_nutrition():
+    body = client.post("/predict", files={"file": ("plate.jpg", jpeg(), "image/jpeg")}).json()
+    assert body["nutrition"]["families"]["protein"] >= 1 and body["nutrition"]["estimate"] is True

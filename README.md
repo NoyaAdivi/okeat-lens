@@ -31,6 +31,32 @@
     <td align="center" width="25%"><a href="README.he.md"><b>🌍 HE · EN</b></a><br><sub>every dish named in both</sub></td>
     <td align="center" width="25%"><a href="https://github.com/NoyaAdivi/okeat-lens/actions/workflows/tests.yml"><b>🧪 CI</b></a><br><sub>tests on every push</sub></td>
   </tr>
+  <tr valign="top">
+    <td valign="top" width="33%">
+      <p><b>🍽️ What's in it</b></p>
+      <ul>
+        <li><b>Calories, protein, carbs, fat</b>, fiber, sugar and sodium</li>
+        <li><b>Animated macro donut</b> and % of daily intake</li>
+        <li><b>Portion picker</b>: ½, 1, 1½ or 2 servings</li>
+      </ul>
+    </td>
+    <td valign="top" width="33%">
+      <p><b>🥚 The six nutrient families</b></p>
+      <ul>
+        <li><b>Carbs, proteins, fats, vitamins, minerals, water</b></li>
+        <li><b>Which vitamins and minerals</b> stand out</li>
+        <li><b>Balanced plate</b> view with what to add on the side</li>
+      </ul>
+    </td>
+    <td valign="top" width="33%">
+      <p><b>✨ Things no other food app does together</b></p>
+      <ul>
+        <li><b>9 allergens</b> per dish, next to the kosher type</li>
+        <li><b>My meal</b> adds up dishes, <b>compare</b> two dishes</li>
+        <li><b>Share card</b> image, recent scans, pick a dish by hand</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 <a name="highlights"></a>
@@ -141,6 +167,8 @@ The tests check that every vegan dish is also vegetarian, every name exists in b
 | `GET` | `/health` | is the server up |
 | `GET` | `/labels` | all 101 dishes with names and hints |
 | `POST` | `/predict` | send a photo (`file`), get the dish, top-5 and diet hints |
+| `GET` | `/nutrition/{key}?portions=1` | calories, macros, the six nutrient families, allergens and % of daily intake |
+| `POST` | `/meal` | send `items` (`key`, `portions`), get the meal totals |
 
 ```bash
 curl -F "file=@hummus.jpg" http://localhost:8000/predict
@@ -214,7 +242,7 @@ Interactive docs open at `http://localhost:8000/docs`. How Okeat uses this: [doc
 ├── lens/
 │   ├── diet.py        dish names (HE/EN), diet hints, the JSON Okeat reads
 │   ├── predictor.py   loads the model and predicts top-k dishes
-│   └── api.py         FastAPI server: /health, /labels, /predict
+│   └── api.py         FastAPI server: /health, /labels, /nutrition, /meal, /predict
 ├── train.py           fine-tunes MobileNetV3 on Food-101
 ├── predict.py         recognize a dish from the terminal
 ├── export_onnx.py     export the model to ONNX

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Okeat Lens · מה יש בצלחת?</title>
-  <meta name="description" content="Okeat Lens: recognize a dish from a photo and get kosher, vegan and gluten-free hints for Okeat.">
+  <meta name="description" content="Okeat Lens: recognize a dish from a photo and see its calories, protein, carbs, the six nutrient families, allergens and kosher, vegan and gluten-free hints.">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
 </head>
 <body>
   <div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="floaters" aria-hidden="true"><i>🥑</i><i>🍓</i><i>🥕</i><i>🍋</i><i>🥦</i><i>🍞</i><i>🧀</i><i>🍤</i></div>
 
   <header class="top">
     <a class="brand" href="https://github.com/NoyaAdivi/okeat-lens">
@@ -22,6 +23,7 @@
       <span>Okeat <b>Lens</b></span>
     </a>
     <div class="top-actions">
+      <button class="chip-link meal-link" id="mealJump" type="button" hidden><span data-i18n="myMeal">הארוחה שלי</span> <b id="mealCount">0</b></button>
       <a class="chip-link" href="https://okeat.vercel.app" data-i18n="openOkeat">ל-Okeat</a>
       <button class="lang" id="themeBtn" type="button" data-nk-theme><span data-nk-icon>🌙</span></button>
       <button id="langBtn" class="lang" type="button" aria-label="Switch language">EN</button>
@@ -30,9 +32,15 @@
 
   <main>
     <section class="hero">
-      <p class="eyebrow" data-i18n="eyebrow">ראייה ממוחשבת · Food-101</p>
+      <p class="eyebrow" data-i18n="eyebrow">ראייה ממוחשבת · Food-101 · תזונה</p>
       <h1><span data-i18n="title1">מה יש</span> <span class="grad" data-i18n="title2">בצלחת?</span></h1>
-      <p class="lead" data-i18n="lead">מצלמים מנה, ו-Okeat Lens מזהה אותה ומציע אם היא כנראה טבעונית, צמחונית, ללא גלוטן ואיזה סוג כשרות מתאים לה.</p>
+      <p class="lead" data-i18n="lead">מצלמים מנה, ו-Okeat Lens מזהה אותה ומראה כמה קלוריות, חלבון ופחמימות יש בה, את אבות המזון, האלרגנים, ואם היא כנראה טבעונית, ללא גלוטן ואיזו כשרות מתאימה לה.</p>
+      <div class="stats">
+        <div><b data-count="135">0</b><span data-i18n="stDishes">מנות ומאכלים</span></div>
+        <div><b data-count="6">0</b><span data-i18n="stFam">אבות מזון</span></div>
+        <div><b data-count="9">0</b><span data-i18n="stAll">אלרגנים</span></div>
+        <div><b data-count="2">0</b><span data-i18n="stUp">שפות</span></div>
+      </div>
     </section>
 
     <section class="card upload" id="drop" tabindex="0" aria-describedby="dropHint">
@@ -40,22 +48,28 @@
       <input id="camera" type="file" accept="image/*" capture="environment" hidden>
       <div class="preview" id="preview">
         <div class="placeholder" id="placeholder">
-          <div class="plate-anim" aria-hidden="true"><i></i><i></i><i></i></div>
-          <p id="dropHint" data-i18n="drop">גררו לכאן תמונה של אוכל</p>
+          <div class="plate-anim" aria-hidden="true"><i></i><i></i><i></i><em>🍴</em></div>
+          <p id="dropHint" data-i18n="drop">גררו לכאן תמונה של אוכל, או הדביקו עם Ctrl+V</p>
           <div class="btns">
             <button class="btn primary" id="pickBtn" type="button" data-i18n="pick">בחירת תמונה</button>
             <button class="btn soft" id="camBtn" type="button" data-i18n="camera">צילום</button>
+            <button class="btn mint" id="browseBtn" type="button" data-i18n="browse">בלי תמונה: בחירה מהרשימה</button>
           </div>
         </div>
         <img id="img" alt="" hidden>
-        <div class="scan" id="scan" hidden></div>
+        <div class="scan" id="scan" hidden><span data-i18n="thinking">מזהה…</span></div>
       </div>
 
       <div class="samples">
         <span data-i18n="tryOne">או נסו דוגמה:</span>
-        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=640" data-i18n="sPizza">🍕 פיצה</button>
-        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=640" data-i18n="sBurger">🍔 המבורגר</button>
-        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=640" data-i18n="sIce">🍨 גלידה</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=640" data-key="pizza" data-i18n="sPizza">🍕 פיצה</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=640" data-key="hamburger" data-i18n="sBurger">🍔 המבורגר</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=640" data-key="ice_cream" data-i18n="sIce">🍨 גלידה</button>
+        <button type="button" class="sample" data-src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=640" data-key="sushi" data-i18n="sSushi">🍣 סושי</button>
+      </div>
+      <div class="history" id="history" hidden>
+        <span data-i18n="recent">זוהו לאחרונה:</span>
+        <div class="hist-row" id="histRow"></div>
       </div>
     </section>
 
@@ -65,14 +79,84 @@
           <p class="eyebrow" data-i18n="itLooks">זה נראה כמו</p>
           <h2 id="dishName">…</h2>
           <p class="sub" id="dishOther"></p>
+          <button class="link-btn" id="fixBtn" type="button" data-i18n="notThis">לא זה? בחירת מנה אחרת ✏️</button>
         </div>
-        <div class="ring" id="ring" style="--p:0"><span id="ringVal">0%</span></div>
+        <div class="ring" id="ring" style="--p:0"><span id="ringVal">0%</span><small data-i18n="sure">ביטחון</small></div>
       </div>
       <div class="chips" id="chips"></div>
-      <p class="note" data-i18n="note">אלה רמזים לפי מתכון נפוץ, לא מידע מאומת. ב-Okeat רק הקהילה מאשרת.</p>
+      <div class="allergens" id="allergens"></div>
+
+      <div class="portion">
+        <span data-i18n="portion">כמה אכלתם?</span>
+        <div class="seg-pill" id="portionSeg" role="radiogroup">
+          <button type="button" data-p="0.5">½</button><button type="button" data-p="1" class="on">1</button><button type="button" data-p="1.5">1½</button><button type="button" data-p="2">2</button>
+        </div>
+        <span class="grams" id="grams"></span>
+      </div>
+
+      <div class="nutri">
+        <div class="donut-box">
+          <svg class="donut" id="donut" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="d-bg" cx="60" cy="60" r="48"/>
+            <circle class="d-seg d-p" cx="60" cy="60" r="48"/>
+            <circle class="d-seg d-c" cx="60" cy="60" r="48"/>
+            <circle class="d-seg d-f" cx="60" cy="60" r="48"/>
+          </svg>
+          <div class="kcal"><b id="kcal">0</b><span data-i18n="kcal">קלוריות</span></div>
+        </div>
+        <ul class="macros" id="macros"></ul>
+      </div>
+
+      <h3 data-i18n="dailyH">מתוך הצריכה היומית</h3>
+      <p class="sub small" data-i18n="dailySub">לפי ערכי ייחוס של 2,000 קלוריות ליום</p>
+      <ol class="bars daily" id="daily"></ol>
+
+      <h3 data-i18n="famH">אבות המזון בצלחת</h3>
+      <div class="families" id="families"></div>
+
+      <div class="plate-row">
+        <div>
+          <h3 data-i18n="plateH">צלחת מאוזנת</h3>
+          <p class="sub" id="plateTip"></p>
+          <div class="legend" id="plateLegend"></div>
+        </div>
+        <svg class="hplate" id="hplate" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="92" class="rim"/>
+          <path class="q q-veg" d="M100 100 L100 14 A86 86 0 0 0 100 186 Z"/>
+          <path class="q q-grain" d="M100 100 L100 14 A86 86 0 0 1 186 100 Z"/>
+          <path class="q q-prot" d="M100 100 L186 100 A86 86 0 0 1 100 186 Z"/>
+          <text x="52" y="104">🥦</text><text x="128" y="70">🌾</text><text x="128" y="146">🍗</text>
+          <circle cx="182" cy="26" r="16" class="q q-dairy"/><text x="173" y="32" class="sm">🥛</text>
+        </svg>
+      </div>
+
+      <p class="note" data-i18n="note">הערכים הם הערכה למנה טיפוסית, וגם התגיות הן רמזים ולא מידע מאומת. ב-Okeat רק הקהילה מאשרת.</p>
+
+      <div class="actions">
+        <button class="btn primary" id="addMeal" type="button" data-i18n="addMeal">➕ הוספה לארוחה שלי</button>
+        <button class="btn soft" id="shareBtn" type="button" data-i18n="share">📸 כרטיס לשיתוף</button>
+        <button class="btn mint" id="pinBtn" type="button" data-i18n="compare">⚖️ השוואה</button>
+      </div>
+
+      <div class="compare" id="compare" hidden></div>
+
       <h3 data-i18n="topGuesses">עוד ניחושים</h3>
-      <ol class="bars" id="bars"></ol>
+      <ol class="bars guesses" id="bars"></ol>
       <a class="btn primary wide" id="okeatBtn" href="https://okeat.vercel.app/map" data-i18n="findOkeat">חיפוש מקומות ב-Okeat 🗺️</a>
+    </section>
+
+    <section class="card meal" id="meal" hidden>
+      <div class="meal-head">
+        <h2 data-i18n="mealH">🍽️ הארוחה שלי</h2>
+        <button class="link-btn" id="clearMeal" type="button" data-i18n="clear">ניקוי</button>
+      </div>
+      <ul class="meal-list" id="mealList"></ul>
+      <div class="meal-total">
+        <div class="kcal big"><b id="mealKcal">0</b><span data-i18n="kcal">קלוריות</span></div>
+        <div class="stack" id="mealStack"><i class="sp"></i><i class="sc"></i><i class="sf"></i></div>
+        <ul class="macros mini" id="mealMacros"></ul>
+      </div>
+      <ol class="bars daily" id="mealDaily"></ol>
     </section>
 
     <section class="card settings">
@@ -86,10 +170,18 @@
           <span data-i18n="apiUrl">כתובת ה-API</span>
           <input id="apiUrl" type="url" value="http://localhost:8000" dir="ltr">
         </label>
-        <p class="sub" data-i18n="engineHelp">"בדפדפן" מריץ MobileNet על המכשיר שלכם ומכיר כ-20 מאכלים. "API" משתמש במודל שאימנתי על 101 מנות.</p>
+        <p class="sub" data-i18n="engineHelp">"בדפדפן" מריץ MobileNet על המכשיר שלכם ומכיר כ-50 מאכלים. "API" משתמש במודל שאימנתי על 101 מנות.</p>
       </details>
     </section>
   </main>
+
+  <dialog class="picker" id="picker">
+    <form method="dialog" class="pick-head">
+      <input id="pickSearch" type="search" autocomplete="off" data-i18n-ph="search" placeholder="חיפוש מנה…">
+      <button class="x" value="close" aria-label="Close">✕</button>
+    </form>
+    <div class="pick-grid" id="pickGrid"></div>
+  </dialog>
 
   <footer class="foot">
     <p class="built-by"><span class="bb-en">Built by</span><span class="bb-he">נבנה על ידי</span> <a href="https://www.linkedin.com/in/noya-adivi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg><span class="bb-en">Noya</span><span class="bb-he">נויה</span></a></p>

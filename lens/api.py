@@ -12,9 +12,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image, UnidentifiedImageError
 
 from . import __version__
-from .diet import build_result, classes
+from pydantic import BaseModel, Field
+
+from .diet import build_result, calorie_split, classes, daily_reference, dish, meal_totals, nutrient_families, scale_nutrition
 
 MAX_BYTES = 8 * 1024 * 1024
+
+
+class MealItem(BaseModel):
+    key: str
+    portions: float = Field(1.0, gt=0, le=10)
+
+
+class Meal(BaseModel):
+    items: list[MealItem] = Field(..., min_length=1, max_length=30)
 
 
 def create_app(predictor=None) -> FastAPI:
@@ -44,6 +55,28 @@ def create_app(predictor=None) -> FastAPI:
     @app.get("/labels")
     def labels():
         return {"count": len(classes()), "classes": classes()}
+
+    @app.get("/nutrition/{key}")
+    def nutrition(key: str, portions: float = 1.0):
+        if not 0 < portions <= 10:
+            raise HTTPException(422, "portions must be between 0 and 10")
+        try:
+            d = dish(key)
+        except KeyError:
+            raise HTTPException(404, f"Unknown dish: {key}")
+        n = scale_nutrition(d["nutrition"], portions)
+        return {"key": key, "en": d["en"], "he": d["he"], "portions": portions, **n,
+                "calorie_split": calorie_split(n), "families": nutrient_families(n),
+                "allergens": d["allergens"], "groups": d["groups"],
+                "daily_pct": {k: round(100 * n[k] / v) for k, v in daily_reference().items()},
+                "estimate": True}
+
+    @app.post("/meal")
+    def meal(body: Meal):
+        try:
+            return meal_totals([(i.key, i.portions) for i in body.items])
+        except KeyError as e:
+            raise HTTPException(404, str(e).strip("'"))
 
     @app.post("/predict")
     async def predict(file: UploadFile = File(...), k: int = 5):

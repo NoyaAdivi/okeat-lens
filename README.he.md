@@ -33,6 +33,32 @@
     <td align="center" width="25%"><a href="README.md"><b>🌍 עב · EN</b></a><br><sub>כל מנה בשתי השפות</sub></td>
     <td align="center" width="25%"><a href="https://github.com/NoyaAdivi/okeat-lens/actions/workflows/tests.yml"><b>🧪 CI</b></a><br><sub>בדיקות בכל push</sub></td>
   </tr>
+  <tr valign="top">
+    <td valign="top" width="33%">
+      <p><b>🍽️ מה יש במנה</b></p>
+      <ul>
+        <li><b>קלוריות, חלבון, פחמימות, שומן</b>, סיבים, סוכר ונתרן</li>
+        <li><b>עוגה מונפשת</b> ואחוז מהצריכה היומית</li>
+        <li><b>בחירת כמות</b>: ½, 1, 1½ או 2 מנות</li>
+      </ul>
+    </td>
+    <td valign="top" width="33%">
+      <p><b>🥚 אבות המזון</b></p>
+      <ul>
+        <li><b>פחמימות, חלבונים, שומנים, ויטמינים, מינרלים ומים</b></li>
+        <li><b>אילו ויטמינים ומינרלים</b> בולטים במנה</li>
+        <li><b>צלחת מאוזנת</b> עם הצעה מה להוסיף לצד</li>
+      </ul>
+    </td>
+    <td valign="top" width="33%">
+      <p><b>✨ מה שאין באפליקציות אחרות ביחד</b></p>
+      <ul>
+        <li><b>9 אלרגנים</b> לכל מנה, ליד סוג הכשרות</li>
+        <li><b>הארוחה שלי</b> מחברת מנות, <b>השוואה</b> בין שתי מנות</li>
+        <li><b>כרטיס לשיתוף</b>, היסטוריית זיהויים ובחירה ידנית</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 <a name="highlights"></a>
@@ -143,6 +169,8 @@ flowchart RL
 | `GET` | `/health` | האם השרת עובד |
 | `GET` | `/labels` | כל 101 המנות עם שמות ורמזים |
 | `POST` | `/predict` | שולחים תמונה (`file`), מקבלים מנה, 5 ניחושים ורמזים |
+| `GET` | `/nutrition/{key}?portions=1` | קלוריות, אבות המזון, אלרגנים ואחוז מהצריכה היומית |
+| `POST` | `/meal` | שולחים `items` (`key`, `portions`), מקבלים סיכום של הארוחה |
 
 <div dir="ltr">
 
@@ -222,7 +250,7 @@ curl -F "file=@hummus.jpg" http://localhost:8000/predict
 ├── lens/
 │   ├── diet.py        dish names (HE/EN), diet hints, the JSON Okeat reads
 │   ├── predictor.py   loads the model and predicts top-k dishes
-│   └── api.py         FastAPI server: /health, /labels, /predict
+│   └── api.py         FastAPI server: /health, /labels, /nutrition, /meal, /predict
 ├── train.py           fine-tunes MobileNetV3 on Food-101
 ├── predict.py         recognize a dish from the terminal
 ├── export_onnx.py     export the model to ONNX
