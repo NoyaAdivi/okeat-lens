@@ -120,7 +120,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-en.svg" width="100%" alt="See it in action"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screenshot-en-light.png" width="80%" alt="Okeat Lens home page"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screenshot-en.png" width="80%" alt="Okeat Lens home page"></a>
 </p>
 
 <p align="center">
