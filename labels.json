@@ -4574,7 +4574,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 300,
-    "kcal": 300,
+    "kcal": 298,
     "protein": 16,
     "carbs": 18,
     "fat": 18,
@@ -4611,7 +4611,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 700,
+    "kcal": 690,
     "protein": 20,
     "carbs": 85,
     "fat": 30,
@@ -4650,7 +4650,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 250,
-    "kcal": 450,
+    "kcal": 454,
     "protein": 15,
     "carbs": 40,
     "fat": 26,
@@ -4682,7 +4682,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 700,
+    "kcal": 688,
     "protein": 40,
     "carbs": 60,
     "fat": 32,
@@ -4719,7 +4719,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 650,
+    "kcal": 640,
     "protein": 18,
     "carbs": 70,
     "fat": 32,
@@ -4758,7 +4758,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 180,
-    "kcal": 600,
+    "kcal": 604,
     "protein": 10,
     "carbs": 60,
     "fat": 36,
@@ -4788,7 +4788,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 200,
-    "kcal": 640,
+    "kcal": 634,
     "protein": 12,
     "carbs": 70,
     "fat": 34,
@@ -4819,7 +4819,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 500,
+    "kcal": 496,
     "protein": 12,
     "carbs": 40,
     "fat": 32,
@@ -4887,7 +4887,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 200,
-    "kcal": 300,
+    "kcal": 294,
     "protein": 9,
     "carbs": 60,
     "fat": 2,
@@ -4921,7 +4921,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 300,
-    "kcal": 420,
+    "kcal": 417,
     "protein": 14,
     "carbs": 70,
     "fat": 9,
@@ -4954,7 +4954,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 450,
+    "kcal": 434,
     "protein": 13,
     "carbs": 82,
     "fat": 6,
@@ -5023,7 +5023,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 90,
-    "kcal": 350,
+    "kcal": 353,
     "protein": 5,
     "carbs": 45,
     "fat": 17,
@@ -5055,7 +5055,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 60,
-    "kcal": 250,
+    "kcal": 248,
     "protein": 3,
     "carbs": 32,
     "fat": 12,
@@ -5087,7 +5087,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 25,
-    "kcal": 135,
+    "kcal": 137,
     "protein": 4,
     "carbs": 10,
     "fat": 9,
@@ -5118,7 +5118,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 400,
-    "kcal": 420,
+    "kcal": 414,
     "protein": 22,
     "carbs": 50,
     "fat": 14,
@@ -5152,7 +5152,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 420,
+    "kcal": 402,
     "protein": 20,
     "carbs": 40,
     "fat": 18,
@@ -5185,7 +5185,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 400,
-    "kcal": 620,
+    "kcal": 612,
     "protein": 35,
     "carbs": 55,
     "fat": 28,
@@ -5219,7 +5219,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 400,
-    "kcal": 220,
+    "kcal": 209,
     "protein": 20,
     "carbs": 12,
     "fat": 9,
@@ -5253,7 +5253,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 100,
-    "kcal": 110,
+    "kcal": 111,
     "protein": 2,
     "carbs": 10,
     "fat": 7,
@@ -5285,7 +5285,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 350,
+    "kcal": 349,
     "protein": 14,
     "carbs": 35,
     "fat": 17,
@@ -5320,7 +5320,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 460,
+    "kcal": 463,
     "protein": 7,
     "carbs": 48,
     "fat": 27,
@@ -5352,7 +5352,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 220,
-    "kcal": 450,
+    "kcal": 440,
     "protein": 25,
     "carbs": 40,
     "fat": 20,
@@ -5389,7 +5389,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 300,
+    "kcal": 304,
     "protein": 8,
     "carbs": 32,
     "fat": 16,
@@ -5425,7 +5425,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 250,
-    "kcal": 300,
+    "kcal": 307,
     "protein": 11,
     "carbs": 50,
     "fat": 7,
@@ -5461,7 +5461,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 250,
-    "kcal": 380,
+    "kcal": 381,
     "protein": 14,
     "carbs": 52,
     "fat": 13,
@@ -5498,7 +5498,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 400,
-    "kcal": 600,
+    "kcal": 582,
     "protein": 30,
     "carbs": 75,
     "fat": 18,
@@ -5536,7 +5536,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 420,
+    "kcal": 413,
     "protein": 20,
     "carbs": 45,
     "fat": 17,
@@ -5573,7 +5573,7 @@
    "kosher": "meat",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 520,
+    "kcal": 490,
     "protein": 40,
     "carbs": 60,
     "fat": 10,
@@ -5606,7 +5606,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 250,
-    "kcal": 330,
+    "kcal": 328,
     "protein": 10,
     "carbs": 45,
     "fat": 12,
@@ -5640,7 +5640,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 350,
+    "kcal": 344,
     "protein": 9,
     "carbs": 50,
     "fat": 12,
@@ -5676,7 +5676,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 220,
+    "kcal": 221,
     "protein": 3,
     "carbs": 50,
     "fat": 1,
@@ -5707,7 +5707,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 350,
-    "kcal": 260,
+    "kcal": 261,
     "protein": 30,
     "carbs": 24,
     "fat": 5,
@@ -5741,7 +5741,7 @@
    "kosher": "dairy",
    "nutrition": {
     "serving_g": 160,
-    "kcal": 430,
+    "kcal": 420,
     "protein": 20,
     "carbs": 40,
     "fat": 20,
@@ -5775,7 +5775,7 @@
    "kosher": "parve",
    "nutrition": {
     "serving_g": 150,
-    "kcal": 310,
+    "kcal": 303,
     "protein": 33,
     "carbs": 0,
     "fat": 19,
