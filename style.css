@@ -435,3 +435,28 @@ html[data-theme="dark"] .week{background:var(--surface)}
 @keyframes wkGrow{from{transform:scaleY(0)}}
 @media (prefers-reduced-motion:reduce){.wk-bar,.wk-v,.week{animation:none;opacity:1}}
 .top .lang{white-space:nowrap}
+
+/* ---------- result tabs ---------- */
+.rtabs{position:relative;display:flex;gap:4px;margin:22px 0 14px;padding:5px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1.5px rgba(139,124,246,.18)}
+.rtabs button{position:relative;z-index:1;flex:1;border:0;background:none;padding:11px 8px;border-radius:999px;font:inherit;font-weight:700;color:var(--ink-soft);cursor:pointer;overflow:hidden;transition:color .3s,transform .2s}
+.rtabs button:hover{color:var(--ink)}
+.rtabs button:active{transform:scale(.95)}
+.rtabs button.on{color:#fff}
+.rt-pill{position:absolute;top:5px;bottom:5px;left:0;border-radius:999px;background:linear-gradient(120deg,#B9B0FF,#8B7CF6 50%,#F5A3C0);background-size:200% 100%;box-shadow:0 8px 20px -8px rgba(85,72,200,.6);transition:transform .45s cubic-bezier(.3,1.35,.5,1),width .45s cubic-bezier(.3,1.35,.5,1);animation:flow 6s ease infinite}
+.rpane.pane-in{animation:paneIn .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes paneIn{from{opacity:0;transform:translateY(14px) scale(.985)}}
+/* ---------- fun micro-interactions ---------- */
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:ripple .65s ease-out;pointer-events:none;z-index:2}
+@keyframes ripple{to{transform:scale(2.4);opacity:0}}
+.sample,.seg-pill button,.presets button{position:relative;overflow:hidden}
+#dishName.pop-in{animation:dishPop .7s cubic-bezier(.3,1.5,.5,1)}
+@keyframes dishPop{0%{opacity:0;transform:translateY(10px) scale(.8);filter:blur(4px)}60%{filter:blur(0)}}
+.sec:hover::before{animation:wiggle .5s ease}
+@keyframes wiggle{25%{transform:rotate(-12deg) scale(1.1)}75%{transform:rotate(10deg) scale(1.1)}}
+.card:not(.result):hover{transform:translateY(-4px)}
+.sample{transition:transform .25s cubic-bezier(.3,1.5,.5,1)}
+.sample:hover{transform:translateY(-3px) rotate(-2deg)}
+.sample:active{transform:scale(.94)}
+.chips > *,.allergens > *{animation:pop .45s cubic-bezier(.3,1.5,.5,1) both}
+.chips > *:nth-child(2){animation-delay:.06s}.chips > *:nth-child(3){animation-delay:.12s}.chips > *:nth-child(4){animation-delay:.18s}.chips > *:nth-child(5){animation-delay:.24s}
+@media (prefers-reduced-motion:reduce){.rt-pill,.rpane.pane-in,#dishName.pop-in,.chips > *,.allergens > *{animation:none}.rt-pill{transition:none}}

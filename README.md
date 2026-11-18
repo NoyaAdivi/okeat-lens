@@ -94,8 +94,31 @@
   </tr>
 </table>
 
+<a name="whats-new"></a>
+<h3 align="center">✨ Playful, animated and calm <sub><sup>new</sup></sub></h3>
+<p align="center">The whole site moves: soft animations everywhere, but only what you need is on screen at once.</p>
+
+<table>
+  <tr valign="top">
+    <td width="50%">
+      <ul>
+        <li><b>🗂️ Result in tabs:</b> Nutrition, Boost and Guesses, with a gliding pill, so the result card is short and clear</li>
+        <li><b>💧 Tap ripples and pop-ins:</b> every button answers your touch, the dish name pops in and the diet chips bounce in one by one</li>
+        <li><b>♿ Respects reduced motion:</b> all animations turn off for users who ask their device for less movement</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <ul>
+        <li><b>📅 My week chart:</b> calories for each of the last 7 days against your goal line, with a daily average</li>
+        <li><b>🌅 New day, fresh meal:</b> "My meal" starts empty every morning and yesterday is saved in the chart</li>
+        <li><b>💾 Remembers your settings:</b> recognition engine, API address and <a href="https://noyaadivi.github.io/okeat-lens/?lang=en">language from the link</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 <a name="app"></a>
-<h3 align="center">📲 App and FAQ <sub><sup>new</sup></sub></h3>
+<h3 align="center">📲 App and FAQ</h3>
 <p align="center">Okeat Lens can be installed as a real app with its own icon, and the site answers common questions by topic.</p>
 
 <table>

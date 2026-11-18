@@ -51,7 +51,7 @@ const I18N = {
     aim: "המטרה שלי", lose: "לרדת במשקל", keep: "לשמור", gain: "לעלות במסה", calcBtn: "🧮 חישוב", saveGoal: "✓ שמירה כיעד שלי",
     proteinG: "חלבון (גרם)", carbsG: "פחמימות (גרם)", fatG: "שומן (גרם)", goalNote: "הערכה כללית בלבד ולא תחליף לייעוץ של דיאטנית.",
     bmr: "במנוחה", tdee: "שריפה יומית", target: "היעד שלכם", goalSaved: "היעד היומי עודכן ✓", goalReset: "חזרנו ל-2,000 קלוריות", fixFields: "בדקו את השדות המסומנים",
-    nowGoal: "היעד שלכם", defGoal: "ברירת מחדל", weekH: "📅 השבוע שלי", weekSub: "כמה קלוריות נאכלו בכל יום, מול היעד", weekEmpty: "הוסיפו מנות ל'ארוחה שלי' והגרף יתמלא יום אחרי יום", weekAvg: "ממוצע: {n} קלוריות ביום", weekDays: "א,ב,ג,ד,ה,ו,ש", today: "היום", newDay: "יום חדש! הארוחה של אתמול נשמרה בגרף השבועי 🌅", clearWeek: "איפוס הגרף", themeLbl: "החלפת מצב כהה/בהיר",
+    rtNut: "📊 תזונה", rtBoost: "🧪 לשדרג", rtMore: "🔮 ניחושים", nowGoal: "היעד שלכם", defGoal: "ברירת מחדל", weekH: "📅 השבוע שלי", weekSub: "כמה קלוריות נאכלו בכל יום, מול היעד", weekEmpty: "הוסיפו מנות ל'ארוחה שלי' והגרף יתמלא יום אחרי יום", weekAvg: "ממוצע: {n} קלוריות ביום", weekDays: "א,ב,ג,ד,ה,ו,ש", today: "היום", newDay: "יום חדש! הארוחה של אתמול נשמרה בגרף השבועי 🌅", clearWeek: "איפוס הגרף", themeLbl: "החלפת מצב כהה/בהיר",
     pickCmp: "⚖️ בחרו מנה להשוואה מול {d}", pf_all: "הכל", pf_il: "🇮🇱 ישראלי", pf_vegan: "🌱 טבעוני", pf_gluten_free: "🌾 ללא גלוטן", pf_protein: "💪 עשיר בחלבון", pf_light: "🪶 עד 300 קלוריות", pf_sweet: "🍰 מתוקים", noMatch: "לא נמצאה מנה 🤔",
     cmpSwap: "🔄 להחליף ביניהן", cmpOther: "✏️ מנה אחרת", cmpClose: "✕ סגירה", better: "עדיף", cmpWin: "🏆 {d} עדיפה ב-{n} מתוך {m}", cmpTie: "🤝 תיקו, שתיהן טובות", cmpNote: "עדיף = יותר חלבון וסיבים, פחות קלוריות, סוכר, שומן ונתרן",
     cardFoot: "הערכה למנה טיפוסית · Okeat Lens",
@@ -100,7 +100,7 @@ const I18N = {
     aim: "My goal", lose: "Lose weight", keep: "Maintain", gain: "Build mass", calcBtn: "🧮 Calculate", saveGoal: "✓ Save as my goal",
     proteinG: "Protein (g)", carbsG: "Carbs (g)", fatG: "Fat (g)", goalNote: "A general estimate, not a replacement for a dietitian.",
     bmr: "At rest", tdee: "Daily burn", target: "Your goal", goalSaved: "Daily goal updated ✓", goalReset: "Back to 2,000 calories", fixFields: "Check the highlighted fields",
-    nowGoal: "Your goal", defGoal: "Default", weekH: "📅 My week", weekSub: "Calories eaten each day, against your goal", weekEmpty: "Add dishes to 'My meal' and this chart fills up day by day", weekAvg: "Average: {n} calories a day", weekDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat", today: "Today", newDay: "New day! Yesterday's meal is saved in your weekly chart 🌅", clearWeek: "Reset chart", themeLbl: "Toggle dark/light mode",
+    rtNut: "📊 Nutrition", rtBoost: "🧪 Boost", rtMore: "🔮 Guesses", nowGoal: "Your goal", defGoal: "Default", weekH: "📅 My week", weekSub: "Calories eaten each day, against your goal", weekEmpty: "Add dishes to 'My meal' and this chart fills up day by day", weekAvg: "Average: {n} calories a day", weekDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat", today: "Today", newDay: "New day! Yesterday's meal is saved in your weekly chart 🌅", clearWeek: "Reset chart", themeLbl: "Toggle dark/light mode",
     pickCmp: "⚖️ Pick a dish to compare with {d}", pf_all: "All", pf_il: "🇮🇱 Israeli", pf_vegan: "🌱 Vegan", pf_gluten_free: "🌾 Gluten-free", pf_protein: "💪 High protein", pf_light: "🪶 Up to 300 calories", pf_sweet: "🍰 Sweets", noMatch: "No dish found 🤔",
     cmpSwap: "🔄 Swap them", cmpOther: "✏️ Another dish", cmpClose: "✕ Close", better: "better", cmpWin: "🏆 {d} wins {n} of {m}", cmpTie: "🤝 A tie, both are fine", cmpNote: "Better = more protein and fiber, less calories, sugar, fat and sodium",
     cardFoot: "Estimate for a typical serving · Okeat Lens",
@@ -180,6 +180,7 @@ const PICK_FILTERS = {
 };
 
 let lang = store.get("lang", "he");
+try { const ql = new URLSearchParams(location.search).get("lang"); if (ql === "he" || ql === "en") { lang = ql; store.set("lang", lang); } } catch {}
 let labels = {}, all = [], ref = { kcal: 2000, protein: 50, carbs: 260, fat: 70, fiber: 30, sugar: 90, sodium_mg: 2400 };
 let mobilenetModel = null, lastBlob = null, lastItems = null, current = null, portions = 1, picked = false;
 const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -395,6 +396,8 @@ function render(items, animate = true) {
     frame2(() => (fill.style.width = Math.max(2, d.confidence * 100) + "%"));
   });
   bars.previousElementSibling.hidden = bars.hidden = items.length < 2;
+  const moreTab = document.querySelector('[data-rt="more"]');
+  if (moreTab) { moreTab.hidden = items.length < 2; if (moreTab.hidden && moreTab.classList.contains("on")) window.showRTab?.("nut"); else setTimeout(() => window.showRTab?.(document.querySelector("#rTabs .on").dataset.rt), 30); }
 
   $("result").hidden = false;
   window.revealAll?.();
@@ -1009,6 +1012,37 @@ function setup() {
     io.unobserve(e.target);
   }));
   io.observe(document.querySelector(".stats"));
+
+  /* result tabs: less on screen at once */
+  const rTabs = $("rTabs"), movePill = () => {
+    const on = rTabs.querySelector(".on"), pill = rTabs.querySelector(".rt-pill");
+    if (!on || !on.offsetWidth) return;
+    pill.style.width = on.offsetWidth + "px";
+    pill.style.transform = `translateX(${on.offsetLeft}px)`;
+  };
+  window.showRTab = (k) => {
+    rTabs.querySelectorAll("[data-rt]").forEach((b) => { const on = b.dataset.rt === k; b.classList.toggle("on", on); b.setAttribute("aria-selected", on); });
+    document.querySelectorAll(".rpane").forEach((p) => { const on = p.dataset.rp === k; p.hidden = !on; if (on) { p.classList.remove("pane-in"); void p.offsetWidth; p.classList.add("pane-in"); } });
+    movePill(); revealAll();
+  };
+  rTabs.onclick = (e) => { const b = e.target.closest("[data-rt]"); if (b) showRTab(b.dataset.rt); };
+  addEventListener("resize", movePill);
+  new MutationObserver(movePill).observe($("result"), { attributes: true, attributeFilter: ["hidden"] });
+  $("langBtn").addEventListener("click", () => setTimeout(movePill, 50));
+
+  /* fun: tap ripple on every button, emoji pop on a new result */
+  document.addEventListener("pointerdown", (e) => {
+    const b = e.target.closest(".btn, .sample, .rtabs button, .seg-pill button, .presets button");
+    if (!b || reduced) return;
+    const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height);
+    const w = document.createElement("span");
+    w.className = "ripple";
+    w.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`;
+    b.appendChild(w);
+    setTimeout(() => w.remove(), 650);
+  });
+  new MutationObserver(() => { const h = $("dishName"); h.classList.remove("pop-in"); void h.offsetWidth; h.classList.add("pop-in"); })
+    .observe($("dishName"), { childList: true, characterData: true, subtree: true });
 
   /* polish: sticky header, scroll reveal, tilt and button shine */
   addEventListener("scroll", () => $("top").classList.toggle("stuck", scrollY > 10), { passive: true });

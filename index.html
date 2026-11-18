@@ -119,18 +119,13 @@
         <ul class="macros" id="macros"></ul>
       </div>
 
-      <section class="boost rv" id="boost">
-        <h3 class="sec" data-ic="🧪" data-i18n="boostH">לשדרג את הצלחת</h3>
-        <p class="sub small" data-i18n="boostSub">רוצים יותר חלבון, פחמימה או סיבים? בחרו, הוסיפו, וכל המספרים מתעדכנים</p>
-        <div class="boost-goals" id="boostGoals"></div>
-        <div class="addon-grid" id="addonGrid"></div>
-        <div class="extras" id="extrasBox" hidden>
-          <div class="extras-head"><b data-i18n="onPlate">נוסף לצלחת</b><button class="link-btn" id="clearExtras" type="button" data-i18n="clearExtras">הסרת הכל</button></div>
-          <div class="extras-list" id="extrasList"></div>
-          <p class="delta" id="extrasDelta"></p>
-        </div>
-      </section>
-
+      <div class="rtabs" id="rTabs" role="tablist">
+        <span class="rt-pill" aria-hidden="true"></span>
+        <button type="button" role="tab" data-rt="nut" class="on" aria-selected="true" data-i18n="rtNut">📊 תזונה</button>
+        <button type="button" role="tab" data-rt="boost" aria-selected="false" data-i18n="rtBoost">🧪 לשדרג</button>
+        <button type="button" role="tab" data-rt="more" aria-selected="false" data-i18n="rtMore">🔮 ניחושים</button>
+      </div>
+      <div class="rpane" data-rp="nut">
       <div class="daily-head rv"><h3 class="sec" data-ic="📊" data-i18n="dailyH">מתוך הצריכה היומית</h3><button class="link-btn goal-link" type="button" data-i18n="changeGoal">🎯 שינוי היעד</button></div>
       <p class="sub small" id="dailySub"></p>
       <ol class="bars daily rv" id="daily"></ol>
@@ -154,6 +149,26 @@
         </svg>
       </div>
 
+      </div>
+      <div class="rpane" data-rp="boost" hidden>
+      <section class="boost rv" id="boost">
+        <h3 class="sec" data-ic="🧪" data-i18n="boostH">לשדרג את הצלחת</h3>
+        <p class="sub small" data-i18n="boostSub">רוצים יותר חלבון, פחמימה או סיבים? בחרו, הוסיפו, וכל המספרים מתעדכנים</p>
+        <div class="boost-goals" id="boostGoals"></div>
+        <div class="addon-grid" id="addonGrid"></div>
+        <div class="extras" id="extrasBox" hidden>
+          <div class="extras-head"><b data-i18n="onPlate">נוסף לצלחת</b><button class="link-btn" id="clearExtras" type="button" data-i18n="clearExtras">הסרת הכל</button></div>
+          <div class="extras-list" id="extrasList"></div>
+          <p class="delta" id="extrasDelta"></p>
+        </div>
+      </section>
+
+      </div>
+      <div class="rpane" data-rp="more" hidden>
+      <h3 class="sec rv" data-ic="🔮" data-i18n="topGuesses">עוד ניחושים</h3>
+      <ol class="bars guesses" id="bars"></ol>
+      </div>
+
       <p class="note" data-i18n="note">הערכים הם הערכה למנה טיפוסית, וגם התגיות הן רמזים ולא מידע מאומת. ב-Okeat רק הקהילה מאשרת.</p>
 
       <div class="actions rv">
@@ -164,8 +179,6 @@
 
       <div class="compare" id="compare" hidden></div>
 
-      <h3 class="sec rv" data-ic="🔮" data-i18n="topGuesses">עוד ניחושים</h3>
-      <ol class="bars guesses" id="bars"></ol>
       <a class="btn primary wide" id="okeatBtn" href="https://okeat.vercel.app/map" target="_blank" rel="noopener"><span data-i18n="findOkeat">חיפוש מקומות ב-Okeat 🗺️</span><small id="okeatFilters"></small></a>
     </section>
 
