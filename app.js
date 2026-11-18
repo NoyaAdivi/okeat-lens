@@ -51,7 +51,7 @@ const I18N = {
     aim: "המטרה שלי", lose: "לרדת במשקל", keep: "לשמור", gain: "לעלות במסה", calcBtn: "🧮 חישוב", saveGoal: "✓ שמירה כיעד שלי",
     proteinG: "חלבון (גרם)", carbsG: "פחמימות (גרם)", fatG: "שומן (גרם)", goalNote: "הערכה כללית בלבד ולא תחליף לייעוץ של דיאטנית.",
     bmr: "במנוחה", tdee: "שריפה יומית", target: "היעד שלכם", goalSaved: "היעד היומי עודכן ✓", goalReset: "חזרנו ל-2,000 קלוריות", fixFields: "בדקו את השדות המסומנים",
-    nowGoal: "היעד שלכם", defGoal: "ברירת מחדל",
+    nowGoal: "היעד שלכם", defGoal: "ברירת מחדל", weekH: "📅 השבוע שלי", weekSub: "כמה קלוריות נאכלו בכל יום, מול היעד", weekEmpty: "הוסיפו מנות ל'ארוחה שלי' והגרף יתמלא יום אחרי יום", weekAvg: "ממוצע: {n} קלוריות ביום", weekDays: "א,ב,ג,ד,ה,ו,ש", today: "היום", newDay: "יום חדש! הארוחה של אתמול נשמרה בגרף השבועי 🌅", clearWeek: "איפוס הגרף", themeLbl: "החלפת מצב כהה/בהיר",
     pickCmp: "⚖️ בחרו מנה להשוואה מול {d}", pf_all: "הכל", pf_il: "🇮🇱 ישראלי", pf_vegan: "🌱 טבעוני", pf_gluten_free: "🌾 ללא גלוטן", pf_protein: "💪 עשיר בחלבון", pf_light: "🪶 עד 300 קלוריות", pf_sweet: "🍰 מתוקים", noMatch: "לא נמצאה מנה 🤔",
     cmpSwap: "🔄 להחליף ביניהן", cmpOther: "✏️ מנה אחרת", cmpClose: "✕ סגירה", better: "עדיף", cmpWin: "🏆 {d} עדיפה ב-{n} מתוך {m}", cmpTie: "🤝 תיקו, שתיהן טובות", cmpNote: "עדיף = יותר חלבון וסיבים, פחות קלוריות, סוכר, שומן ונתרן",
     cardFoot: "הערכה למנה טיפוסית · Okeat Lens",
@@ -100,7 +100,7 @@ const I18N = {
     aim: "My goal", lose: "Lose weight", keep: "Maintain", gain: "Build mass", calcBtn: "🧮 Calculate", saveGoal: "✓ Save as my goal",
     proteinG: "Protein (g)", carbsG: "Carbs (g)", fatG: "Fat (g)", goalNote: "A general estimate, not a replacement for a dietitian.",
     bmr: "At rest", tdee: "Daily burn", target: "Your goal", goalSaved: "Daily goal updated ✓", goalReset: "Back to 2,000 calories", fixFields: "Check the highlighted fields",
-    nowGoal: "Your goal", defGoal: "Default",
+    nowGoal: "Your goal", defGoal: "Default", weekH: "📅 My week", weekSub: "Calories eaten each day, against your goal", weekEmpty: "Add dishes to 'My meal' and this chart fills up day by day", weekAvg: "Average: {n} calories a day", weekDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat", today: "Today", newDay: "New day! Yesterday's meal is saved in your weekly chart 🌅", clearWeek: "Reset chart", themeLbl: "Toggle dark/light mode",
     pickCmp: "⚖️ Pick a dish to compare with {d}", pf_all: "All", pf_il: "🇮🇱 Israeli", pf_vegan: "🌱 Vegan", pf_gluten_free: "🌾 Gluten-free", pf_protein: "💪 High protein", pf_light: "🪶 Up to 300 calories", pf_sweet: "🍰 Sweets", noMatch: "No dish found 🤔",
     cmpSwap: "🔄 Swap them", cmpOther: "✏️ Another dish", cmpClose: "✕ Close", better: "better", cmpWin: "🏆 {d} wins {n} of {m}", cmpTie: "🤝 A tie, both are fine", cmpNote: "Better = more protein and fiber, less calories, sugar, fat and sodium",
     cardFoot: "Estimate for a typical serving · Okeat Lens",
@@ -182,7 +182,10 @@ const PICK_FILTERS = {
 let lang = store.get("lang", "he");
 let labels = {}, all = [], ref = { kcal: 2000, protein: 50, carbs: 260, fat: 70, fiber: 30, sugar: 90, sodium_mg: 2400 };
 let mobilenetModel = null, lastBlob = null, lastItems = null, current = null, portions = 1, picked = false;
-let meal = store.get("meal", []), history = store.get("history", []);
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+let meal = store.get("meal", []), history = store.get("history", []), week = store.get("week", {}), newDay = false;
+if (store.get("mealDay", dayKey()) !== dayKey() && meal.length) { meal = []; newDay = true; }
+store.set("mealDay", dayKey());
 let extras = {}, extrasFor = null, boostGoal = null, cmpKey = null, cmpP = 1, pickMode = "pick", pickFilter = "all";
 let baseRef = { ...ref }, goal = store.get("goal", null), sex = store.get("sex", "f"), aim = store.get("aim", "keep");
 if (goal) ref = goal;
@@ -254,6 +257,8 @@ function applyLang() {
   renderMeal(false);
   renderHistory();
   renderGoal();
+  renderWeek();
+  $("themeBtn").setAttribute("aria-label", t("themeLbl"));
   if ($("picker").open) fillPicker();
 }
 
@@ -583,6 +588,7 @@ function setGoal(g) {
   renderGoal();
   if (current) { renderNutrition(false); renderCompare(); }
   renderMeal(false);
+  renderWeek();
   toast(g ? t("goalSaved") : t("goalReset"));
   if (g) confetti(30);
 }
@@ -636,6 +642,7 @@ function mealTotals() {
 function renderMeal(animate = true) {
   meal = meal.filter((m) => labels[m.key] || !all.length);
   store.set("meal", meal);
+  if (all.length && !meal.length) logDay(0);
   $("mealCount").textContent = meal.length;
   $("mealJump").hidden = $("meal").hidden = !meal.length || !all.length;
   if (!meal.length || !all.length) return;
@@ -656,10 +663,38 @@ function renderMeal(animate = true) {
   [s.protein, s.carbs, s.fat].forEach((v, i) => (st[i].style.flexGrow = Math.max(0.001, v)));
   macroList($("mealMacros"), tot, false);
   dailyBars($("mealDaily"), tot);
+  logDay(tot.kcal);
   const left = Math.round(ref.kcal - tot.kcal);
   $("mealLeft").textContent = Math.abs(left) < 25 ? t("hitK") : left > 0
     ? t("leftK", { n: fmt(left), p: fmt(Math.max(0, Math.round(ref.protein - tot.protein))) }) : t("overK", { n: fmt(-left) });
   $("mealLeft").classList.toggle("over", left <= -25);
+}
+
+/* ---------- my week ---------- */
+function logDay(kcal) {
+  const k = dayKey();
+  if ((week[k] || 0) === kcal) return;
+  if (kcal) week[k] = Math.round(kcal); else delete week[k];
+  const keep = Object.keys(week).sort().slice(-14);
+  week = Object.fromEntries(keep.map((d) => [d, week[d]]));
+  store.set("week", week);
+  renderWeek();
+}
+function renderWeek() {
+  const box = $("weekChart");
+  if (!box) return;
+  const names = t("weekDays").split(","), days = [];
+  for (let i = 6; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); days.push(d); }
+  const vals = days.map((d) => week[dayKey(d)] || 0), filled = vals.filter(Boolean);
+  const max = Math.max(ref.kcal * 1.25, ...vals);
+  $("weekEmpty").hidden = filled.length > 0;
+  $("clearWeek").hidden = !filled.length;
+  $("weekAvg").textContent = filled.length ? t("weekAvg", { n: fmt(Math.round(filled.reduce((a, b) => a + b, 0) / filled.length)) }) : "";
+  box.style.setProperty("--g", (ref.kcal / max).toFixed(3));
+  box.innerHTML = `<i class="wk-goal"><small>🎯 ${fmt(ref.kcal)}</small></i>` + days.map((d, i) => {
+    const v = vals[i], h = (v / max) * 100, cls = !v ? "wk-empty" : Math.abs(v - ref.kcal) < ref.kcal * 0.1 ? "wk-hit" : v > ref.kcal ? "wk-over" : "wk-under";
+    return `<div class="wk-col ${cls}${i === 6 ? " now" : ""}" style="--i:${i}" title="${v ? fmt(v) + " " + t("kcal") : ""}"><span class="wk-v">${v ? fmt(v) : ""}</span><span class="wk-track"><span class="wk-bar" style="--h:${Math.max(v ? 4 : 3, h)}%"></span></span><small>${i === 6 ? t("today") : names[d.getDay()]}</small></div>`;
+  }).join("");
 }
 
 function flyToMeal() {
@@ -955,7 +990,15 @@ function setup() {
     setGoal({ ...goalFrom(kcal), protein: +f.elements.protein.value, carbs: +f.elements.carbs.value, fat: +f.elements.fat.value });
   };
 
+  const savedMode = store.get("mode", "browser"), savedApi = store.get("apiUrl", null);
+  if (savedApi) $("apiUrl").value = savedApi;
+  const mr = document.querySelector(`input[name=mode][value="${savedMode}"]`);
+  if (mr) { mr.checked = true; $("apiField").hidden = savedMode !== "api"; }
+  $("apiUrl").onchange = () => store.set("apiUrl", $("apiUrl").value.trim());
+  $("clearWeek").onclick = () => { week = {}; store.set("week", week); renderMeal(false); renderWeek(); };
+  if (newDay) setTimeout(() => toast(t("newDay")), 1200);
   document.querySelectorAll("input[name=mode]").forEach((r) => (r.onchange = () => {
+    store.set("mode", mode());
     $("apiField").hidden = mode() !== "api";
     if (lastBlob) analyze(lastBlob);
   }));

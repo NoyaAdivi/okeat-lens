@@ -411,3 +411,27 @@ html[data-theme="dark"] .presets button{color:#2C2668}
 @media (max-width:700px){.presets{grid-template-columns:repeat(3,1fr)}.calc-grid{grid-template-columns:1fr}.co-tiles b{font-size:1.2rem}.addon-grid{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){.boost-goals button.rec{animation:none}}
 .cmp-name .seg-pill.mini{flex-wrap:nowrap}.cmp-name .seg-pill.mini button{padding:6px 9px}.cmp-bar.win::after{inset-inline-end:6px;font-size:.8rem}
+
+/* ---------- my week ---------- */
+.week{margin:22px 0 6px;padding:18px;border-radius:22px;background:linear-gradient(135deg,var(--lav),var(--pink) 55%,var(--mint));background-size:200% 200%;animation:flow 14s ease infinite}
+html[data-theme="dark"] .week{background:var(--surface)}
+.week-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.week .sec{margin:0}
+.week-chart{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:12px}
+.wk-goal{position:absolute;inset-inline:0;top:calc(20px + 130px * (1 - var(--g,.8)));border-top:2px dashed var(--lav-d);opacity:.6;pointer-events:none;z-index:1}
+.wk-goal small{position:absolute;inset-inline-end:0;top:-18px;font-size:.7rem;font-weight:700;color:var(--lav-d);font-style:normal}
+.wk-col{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.wk-v{height:16px;font-size:.68rem;font-weight:700;color:var(--ink-soft);animation:pop .4s calc(.5s + var(--i,0) * 60ms) backwards;white-space:nowrap}
+.wk-track{position:relative;height:130px;width:100%;display:flex;align-items:flex-end;justify-content:center}
+.wk-bar{display:block;width:min(30px,100%);height:var(--h);border-radius:10px 10px 6px 6px;background:linear-gradient(180deg,#B9B0FF,#8B7CF6);transform-origin:bottom;animation:wkGrow .8s cubic-bezier(.3,1.4,.5,1) both;animation-delay:calc(var(--i,0) * 70ms);transition:filter .2s,transform .2s}
+.wk-col:hover .wk-bar{filter:brightness(1.1);transform:scaleY(1.04)}
+.wk-col.wk-hit .wk-bar{background:linear-gradient(180deg,#8FE0BE,#3BAA7C)}
+.wk-col.wk-over .wk-bar{background:linear-gradient(180deg,#F8B4C8,#E0708F)}
+.wk-col.wk-empty .wk-bar{background:rgba(139,124,246,.18)}
+.wk-col small{font-size:.75rem;font-weight:600;color:var(--ink-soft)}
+.wk-col.now small{color:var(--lav-d);font-weight:800}
+.wk-col.now .wk-bar{box-shadow:0 0 0 3px rgba(139,124,246,.25)}
+.week-empty{margin:8px 0 0;text-align:center;font-size:.85rem;color:var(--ink-soft)}
+@keyframes wkGrow{from{transform:scaleY(0)}}
+@media (prefers-reduced-motion:reduce){.wk-bar,.wk-v,.week{animation:none;opacity:1}}
+.top .lang{white-space:nowrap}

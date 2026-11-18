@@ -32,7 +32,7 @@
     <div class="top-actions">
       <button class="chip-link meal-link" id="mealJump" type="button" hidden><span data-i18n="myMeal">הארוחה שלי</span> <b id="mealCount">0</b></button>
       <a class="chip-link" href="https://okeat.vercel.app" data-i18n="openOkeat">ל-Okeat</a>
-      <button class="lang" id="themeBtn" type="button" data-nk-theme><span data-nk-icon>🌙</span></button>
+      <button class="lang" id="themeBtn" type="button" data-nk-theme aria-label="החלפת מצב כהה/בהיר"><span data-nk-icon>🌙</span></button>
       <button id="langBtn" class="lang" type="button" aria-label="Switch language">EN</button>
     </div>
   </header>
@@ -224,6 +224,12 @@
         </div>
         <button class="btn primary wide" type="submit" data-i18n="saveGoal">✓ שמירה כיעד שלי</button>
       </form>
+      <div class="week">
+        <div class="week-head"><h3 class="sec" data-i18n="weekH">📅 השבוע שלי</h3><button class="link-btn" id="clearWeek" type="button" data-i18n="clearWeek" hidden>איפוס הגרף</button></div>
+        <p class="sub small"><span data-i18n="weekSub">כמה קלוריות נאכלו בכל יום, מול היעד</span> <b id="weekAvg"></b></p>
+        <div class="week-chart" id="weekChart" aria-hidden="true"></div>
+        <p class="week-empty" id="weekEmpty" data-i18n="weekEmpty">הוסיפו מנות ל'ארוחה שלי' והגרף יתמלא יום אחרי יום</p>
+      </div>
       <p class="sub small" data-i18n="goalNote">הערכה כללית בלבד ולא תחליף לייעוץ של דיאטנית.</p>
     </section>
 
