@@ -4562,6 +4562,1241 @@
     "fruit"
    ],
    "allergens": []
+  },
+  {
+   "key": "shakshuka",
+   "en": "Shakshuka",
+   "he": "שקשוקה",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 300,
+    "kcal": 300,
+    "protein": 16,
+    "carbs": 18,
+    "fat": 18,
+    "fiber": 4,
+    "sugar": 10,
+    "sodium_mg": 700,
+    "water_pct": 80,
+    "vitamins": [
+     "A",
+     "C",
+     "B12"
+    ],
+    "minerals": [
+     "Fe",
+     "K"
+    ]
+   },
+   "groups": [
+    "vegetables",
+    "protein"
+   ],
+   "allergens": [
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "falafel_pita",
+   "en": "Falafel in pita",
+   "he": "פלאפל בפיתה",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 700,
+    "protein": 20,
+    "carbs": 85,
+    "fat": 30,
+    "fiber": 12,
+    "sugar": 6,
+    "sodium_mg": 1300,
+    "water_pct": 45,
+    "vitamins": [
+     "B",
+     "C"
+    ],
+    "minerals": [
+     "Fe",
+     "Mg"
+    ]
+   },
+   "groups": [
+    "grains",
+    "protein",
+    "vegetables"
+   ],
+   "allergens": [
+    "gluten",
+    "sesame"
+   ],
+   "il": true
+  },
+  {
+   "key": "hummus_plate",
+   "en": "Hummus plate",
+   "he": "צלחת חומוס",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 250,
+    "kcal": 450,
+    "protein": 15,
+    "carbs": 40,
+    "fat": 26,
+    "fiber": 11,
+    "sugar": 2,
+    "sodium_mg": 800,
+    "water_pct": 60,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Fe",
+     "Mg"
+    ]
+   },
+   "groups": [
+    "protein"
+   ],
+   "allergens": [
+    "sesame"
+   ],
+   "il": true
+  },
+  {
+   "key": "shawarma_pita",
+   "en": "Shawarma in pita",
+   "he": "שווארמה בפיתה",
+   "tags": [],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 700,
+    "protein": 40,
+    "carbs": 60,
+    "fat": 32,
+    "fiber": 4,
+    "sugar": 5,
+    "sodium_mg": 1500,
+    "water_pct": 50,
+    "vitamins": [
+     "B",
+     "B12"
+    ],
+    "minerals": [
+     "Fe",
+     "Zn"
+    ]
+   },
+   "groups": [
+    "grains",
+    "protein"
+   ],
+   "allergens": [
+    "gluten",
+    "sesame"
+   ],
+   "il": true
+  },
+  {
+   "key": "sabich",
+   "en": "Sabich",
+   "he": "סביח",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 650,
+    "protein": 18,
+    "carbs": 70,
+    "fat": 32,
+    "fiber": 9,
+    "sugar": 7,
+    "sodium_mg": 1100,
+    "water_pct": 55,
+    "vitamins": [
+     "B12",
+     "C"
+    ],
+    "minerals": [
+     "Fe",
+     "K"
+    ]
+   },
+   "groups": [
+    "grains",
+    "vegetables",
+    "protein"
+   ],
+   "allergens": [
+    "gluten",
+    "eggs",
+    "sesame"
+   ],
+   "il": true
+  },
+  {
+   "key": "malawach",
+   "en": "Malawach",
+   "he": "מלאווח",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 180,
+    "kcal": 600,
+    "protein": 10,
+    "carbs": 60,
+    "fat": 36,
+    "fiber": 2,
+    "sugar": 3,
+    "sodium_mg": 800,
+    "water_pct": 25,
+    "vitamins": [],
+    "minerals": []
+   },
+   "groups": [
+    "grains"
+   ],
+   "allergens": [
+    "gluten",
+    "milk"
+   ],
+   "il": true
+  },
+  {
+   "key": "jachnun",
+   "en": "Jachnun",
+   "he": "ג'חנון",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 200,
+    "kcal": 640,
+    "protein": 12,
+    "carbs": 70,
+    "fat": 34,
+    "fiber": 2,
+    "sugar": 4,
+    "sodium_mg": 900,
+    "water_pct": 20,
+    "vitamins": [],
+    "minerals": []
+   },
+   "groups": [
+    "grains"
+   ],
+   "allergens": [
+    "gluten",
+    "milk",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "bourekas",
+   "en": "Cheese bourekas",
+   "he": "בורקס גבינה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 500,
+    "protein": 12,
+    "carbs": 40,
+    "fat": 32,
+    "fiber": 1,
+    "sugar": 2,
+    "sodium_mg": 700,
+    "water_pct": 30,
+    "vitamins": [
+     "A"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "grains",
+    "dairy"
+   ],
+   "allergens": [
+    "gluten",
+    "milk",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "schnitzel",
+   "en": "Schnitzel",
+   "he": "שניצל",
+   "tags": [],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 380,
+    "protein": 30,
+    "carbs": 20,
+    "fat": 20,
+    "fiber": 1,
+    "sugar": 1,
+    "sodium_mg": 600,
+    "water_pct": 50,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Fe"
+    ]
+   },
+   "groups": [
+    "protein"
+   ],
+   "allergens": [
+    "gluten",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "ptitim",
+   "en": "Ptitim",
+   "he": "פתיתים",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 200,
+    "kcal": 300,
+    "protein": 9,
+    "carbs": 60,
+    "fat": 2,
+    "fiber": 2,
+    "sugar": 1,
+    "sodium_mg": 400,
+    "water_pct": 65,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Fe"
+    ]
+   },
+   "groups": [
+    "grains"
+   ],
+   "allergens": [
+    "gluten"
+   ],
+   "il": true
+  },
+  {
+   "key": "majadra",
+   "en": "Majadra",
+   "he": "מג'דרה",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 300,
+    "kcal": 420,
+    "protein": 14,
+    "carbs": 70,
+    "fat": 9,
+    "fiber": 10,
+    "sugar": 3,
+    "sodium_mg": 600,
+    "water_pct": 65,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Fe",
+     "Mg"
+    ]
+   },
+   "groups": [
+    "grains",
+    "protein"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "couscous_veg",
+   "en": "Couscous with vegetables",
+   "he": "קוסקוס עם ירקות",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 450,
+    "protein": 13,
+    "carbs": 82,
+    "fat": 6,
+    "fiber": 8,
+    "sugar": 8,
+    "sodium_mg": 700,
+    "water_pct": 70,
+    "vitamins": [
+     "A",
+     "C"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "grains",
+    "vegetables"
+   ],
+   "allergens": [
+    "gluten"
+   ],
+   "il": true
+  },
+  {
+   "key": "israeli_salad",
+   "en": "Israeli salad",
+   "he": "סלט ישראלי",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 200,
+    "kcal": 120,
+    "protein": 2,
+    "carbs": 10,
+    "fat": 8,
+    "fiber": 3,
+    "sugar": 6,
+    "sodium_mg": 250,
+    "water_pct": 90,
+    "vitamins": [
+     "A",
+     "C",
+     "K"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "vegetables"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "sufganiya",
+   "en": "Sufganiya",
+   "he": "סופגנייה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 90,
+    "kcal": 350,
+    "protein": 5,
+    "carbs": 45,
+    "fat": 17,
+    "fiber": 1,
+    "sugar": 20,
+    "sodium_mg": 250,
+    "water_pct": 25,
+    "vitamins": [],
+    "minerals": []
+   },
+   "groups": [
+    "treats",
+    "grains"
+   ],
+   "allergens": [
+    "gluten",
+    "milk",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "rugelach",
+   "en": "Rugelach",
+   "he": "רוגלך",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 60,
+    "kcal": 250,
+    "protein": 3,
+    "carbs": 32,
+    "fat": 12,
+    "fiber": 1,
+    "sugar": 16,
+    "sodium_mg": 100,
+    "water_pct": 15,
+    "vitamins": [],
+    "minerals": []
+   },
+   "groups": [
+    "treats",
+    "grains"
+   ],
+   "allergens": [
+    "gluten",
+    "milk",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "bamba",
+   "en": "Bamba",
+   "he": "במבה",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 25,
+    "kcal": 135,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 9,
+    "fiber": 1,
+    "sugar": 0.5,
+    "sodium_mg": 60,
+    "water_pct": 2,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Mg"
+    ]
+   },
+   "groups": [
+    "treats"
+   ],
+   "allergens": [
+    "peanuts"
+   ],
+   "il": true
+  },
+  {
+   "key": "kubbeh_soup",
+   "en": "Kubbeh soup",
+   "he": "מרק קובה",
+   "tags": [],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 400,
+    "kcal": 420,
+    "protein": 22,
+    "carbs": 50,
+    "fat": 14,
+    "fiber": 5,
+    "sugar": 6,
+    "sodium_mg": 1200,
+    "water_pct": 80,
+    "vitamins": [
+     "A",
+     "C"
+    ],
+    "minerals": [
+     "Fe"
+    ]
+   },
+   "groups": [
+    "grains",
+    "protein",
+    "vegetables"
+   ],
+   "allergens": [
+    "gluten"
+   ],
+   "il": true
+  },
+  {
+   "key": "stuffed_peppers",
+   "en": "Stuffed peppers",
+   "he": "פלפלים ממולאים",
+   "tags": [],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 420,
+    "protein": 20,
+    "carbs": 40,
+    "fat": 18,
+    "fiber": 5,
+    "sugar": 9,
+    "sodium_mg": 700,
+    "water_pct": 75,
+    "vitamins": [
+     "A",
+     "C"
+    ],
+    "minerals": [
+     "Fe",
+     "K"
+    ]
+   },
+   "groups": [
+    "vegetables",
+    "grains",
+    "protein"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "cholent",
+   "en": "Cholent",
+   "he": "חמין",
+   "tags": [],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 400,
+    "kcal": 620,
+    "protein": 35,
+    "carbs": 55,
+    "fat": 28,
+    "fiber": 12,
+    "sugar": 4,
+    "sodium_mg": 1100,
+    "water_pct": 65,
+    "vitamins": [
+     "B",
+     "B12"
+    ],
+    "minerals": [
+     "Fe",
+     "Zn"
+    ]
+   },
+   "groups": [
+    "protein",
+    "grains"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "chicken_soup",
+   "en": "Chicken soup",
+   "he": "מרק עוף",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 400,
+    "kcal": 220,
+    "protein": 20,
+    "carbs": 12,
+    "fat": 9,
+    "fiber": 2,
+    "sugar": 4,
+    "sodium_mg": 1100,
+    "water_pct": 90,
+    "vitamins": [
+     "A",
+     "B"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "protein",
+    "vegetables"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "matbucha",
+   "en": "Matbucha",
+   "he": "מטבוחה",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 100,
+    "kcal": 110,
+    "protein": 2,
+    "carbs": 10,
+    "fat": 7,
+    "fiber": 3,
+    "sugar": 6,
+    "sodium_mg": 400,
+    "water_pct": 80,
+    "vitamins": [
+     "A",
+     "C"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "vegetables"
+   ],
+   "allergens": [],
+   "il": true
+  },
+  {
+   "key": "labneh_toast",
+   "en": "Labneh toast",
+   "he": "טוסט לאבנה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 350,
+    "protein": 14,
+    "carbs": 35,
+    "fat": 17,
+    "fiber": 4,
+    "sugar": 4,
+    "sodium_mg": 700,
+    "water_pct": 50,
+    "vitamins": [
+     "A"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "grains",
+    "dairy"
+   ],
+   "allergens": [
+    "gluten",
+    "milk"
+   ],
+   "il": true
+  },
+  {
+   "key": "burekas_potato",
+   "en": "Potato bourekas",
+   "he": "בורקס תפוחי אדמה",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 460,
+    "protein": 7,
+    "carbs": 48,
+    "fat": 27,
+    "fiber": 3,
+    "sugar": 2,
+    "sodium_mg": 650,
+    "water_pct": 30,
+    "vitamins": [
+     "C"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "grains",
+    "vegetables"
+   ],
+   "allergens": [
+    "gluten"
+   ],
+   "il": true
+  },
+  {
+   "key": "tuna_sandwich",
+   "en": "Tuna sandwich",
+   "he": "כריך טונה",
+   "tags": [],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 220,
+    "kcal": 450,
+    "protein": 25,
+    "carbs": 40,
+    "fat": 20,
+    "fiber": 4,
+    "sugar": 4,
+    "sodium_mg": 850,
+    "water_pct": 50,
+    "vitamins": [
+     "B12",
+     "D"
+    ],
+    "minerals": [
+     "Fe"
+    ]
+   },
+   "groups": [
+    "grains",
+    "protein"
+   ],
+   "allergens": [
+    "gluten",
+    "fish",
+    "eggs"
+   ],
+   "il": true
+  },
+  {
+   "key": "avocado_toast",
+   "en": "Avocado toast",
+   "he": "טוסט אבוקדו",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 300,
+    "protein": 8,
+    "carbs": 32,
+    "fat": 16,
+    "fiber": 8,
+    "sugar": 2,
+    "sodium_mg": 400,
+    "water_pct": 55,
+    "vitamins": [
+     "E",
+     "K",
+     "C"
+    ],
+    "minerals": [
+     "K",
+     "Mg"
+    ]
+   },
+   "groups": [
+    "grains",
+    "vegetables"
+   ],
+   "allergens": [
+    "gluten"
+   ]
+  },
+  {
+   "key": "oatmeal",
+   "en": "Oatmeal",
+   "he": "דייסת שיבולת שועל",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 250,
+    "kcal": 300,
+    "protein": 11,
+    "carbs": 50,
+    "fat": 7,
+    "fiber": 6,
+    "sugar": 12,
+    "sodium_mg": 120,
+    "water_pct": 75,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Fe",
+     "Mg",
+     "Zn"
+    ]
+   },
+   "groups": [
+    "grains",
+    "dairy"
+   ],
+   "allergens": [
+    "gluten",
+    "milk"
+   ]
+  },
+  {
+   "key": "granola_yogurt",
+   "en": "Yogurt with granola",
+   "he": "יוגורט עם גרנולה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 250,
+    "kcal": 380,
+    "protein": 14,
+    "carbs": 52,
+    "fat": 13,
+    "fiber": 5,
+    "sugar": 26,
+    "sodium_mg": 120,
+    "water_pct": 65,
+    "vitamins": [
+     "B12"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "dairy",
+    "grains",
+    "fruit",
+    "treats"
+   ],
+   "allergens": [
+    "milk",
+    "gluten",
+    "nuts"
+   ]
+  },
+  {
+   "key": "poke_bowl",
+   "en": "Poke bowl",
+   "he": "פוקה",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 400,
+    "kcal": 600,
+    "protein": 30,
+    "carbs": 75,
+    "fat": 18,
+    "fiber": 6,
+    "sugar": 8,
+    "sodium_mg": 1100,
+    "water_pct": 65,
+    "vitamins": [
+     "D",
+     "B12",
+     "C"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "protein",
+    "grains",
+    "vegetables"
+   ],
+   "allergens": [
+    "fish",
+    "soy",
+    "sesame"
+   ]
+  },
+  {
+   "key": "stir_fry_tofu",
+   "en": "Tofu stir-fry",
+   "he": "מוקפץ טופו",
+   "tags": [
+    "vegan"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 420,
+    "protein": 20,
+    "carbs": 45,
+    "fat": 17,
+    "fiber": 6,
+    "sugar": 10,
+    "sodium_mg": 1000,
+    "water_pct": 75,
+    "vitamins": [
+     "A",
+     "C"
+    ],
+    "minerals": [
+     "Ca",
+     "Fe"
+    ]
+   },
+   "groups": [
+    "vegetables",
+    "protein",
+    "grains"
+   ],
+   "allergens": [
+    "soy",
+    "gluten"
+   ]
+  },
+  {
+   "key": "chicken_rice",
+   "en": "Chicken breast with rice",
+   "he": "חזה עוף עם אורז",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "meat",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 520,
+    "protein": 40,
+    "carbs": 60,
+    "fat": 10,
+    "fiber": 2,
+    "sugar": 1,
+    "sodium_mg": 500,
+    "water_pct": 60,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "K",
+     "Zn"
+    ]
+   },
+   "groups": [
+    "protein",
+    "grains"
+   ],
+   "allergens": []
+  },
+  {
+   "key": "quinoa_salad",
+   "en": "Quinoa salad",
+   "he": "סלט קינואה",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 250,
+    "kcal": 330,
+    "protein": 10,
+    "carbs": 45,
+    "fat": 12,
+    "fiber": 7,
+    "sugar": 5,
+    "sodium_mg": 400,
+    "water_pct": 70,
+    "vitamins": [
+     "B",
+     "E",
+     "C"
+    ],
+    "minerals": [
+     "Mg",
+     "Fe"
+    ]
+   },
+   "groups": [
+    "grains",
+    "vegetables"
+   ],
+   "allergens": []
+  },
+  {
+   "key": "pancakes_plain",
+   "en": "Pancakes",
+   "he": "פנקייק",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 350,
+    "protein": 9,
+    "carbs": 50,
+    "fat": 12,
+    "fiber": 2,
+    "sugar": 14,
+    "sodium_mg": 600,
+    "water_pct": 40,
+    "vitamins": [
+     "B"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "grains",
+    "treats"
+   ],
+   "allergens": [
+    "gluten",
+    "milk",
+    "eggs"
+   ]
+  },
+  {
+   "key": "smoothie",
+   "en": "Fruit smoothie",
+   "he": "שייק פירות",
+   "tags": [
+    "vegan",
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 220,
+    "protein": 3,
+    "carbs": 50,
+    "fat": 1,
+    "fiber": 5,
+    "sugar": 38,
+    "sodium_mg": 10,
+    "water_pct": 85,
+    "vitamins": [
+     "C"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "fruit"
+   ],
+   "allergens": []
+  },
+  {
+   "key": "protein_shake",
+   "en": "Protein shake",
+   "he": "שייק חלבון",
+   "tags": [
+    "vegetarian",
+    "gluten_free"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 350,
+    "kcal": 260,
+    "protein": 30,
+    "carbs": 24,
+    "fat": 5,
+    "fiber": 1,
+    "sugar": 20,
+    "sodium_mg": 250,
+    "water_pct": 85,
+    "vitamins": [
+     "B12",
+     "D"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "dairy",
+    "protein"
+   ],
+   "allergens": [
+    "milk"
+   ]
+  },
+  {
+   "key": "toast_cheese",
+   "en": "Cheese toast",
+   "he": "טוסט גבינה",
+   "tags": [
+    "vegetarian"
+   ],
+   "kosher": "dairy",
+   "nutrition": {
+    "serving_g": 160,
+    "kcal": 430,
+    "protein": 20,
+    "carbs": 40,
+    "fat": 20,
+    "fiber": 2,
+    "sugar": 4,
+    "sodium_mg": 900,
+    "water_pct": 40,
+    "vitamins": [
+     "A"
+    ],
+    "minerals": [
+     "Ca"
+    ]
+   },
+   "groups": [
+    "grains",
+    "dairy"
+   ],
+   "allergens": [
+    "gluten",
+    "milk"
+   ]
+  },
+  {
+   "key": "baked_salmon",
+   "en": "Baked salmon",
+   "he": "סלמון אפוי",
+   "tags": [
+    "gluten_free"
+   ],
+   "kosher": "parve",
+   "nutrition": {
+    "serving_g": 150,
+    "kcal": 310,
+    "protein": 33,
+    "carbs": 0,
+    "fat": 19,
+    "fiber": 0,
+    "sugar": 0,
+    "sodium_mg": 90,
+    "water_pct": 65,
+    "vitamins": [
+     "D",
+     "B12"
+    ],
+    "minerals": [
+     "K"
+    ]
+   },
+   "groups": [
+    "protein"
+   ],
+   "allergens": [
+    "fish"
+   ]
   }
  ],
  "daily_reference": {

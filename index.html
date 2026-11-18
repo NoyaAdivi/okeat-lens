@@ -46,7 +46,7 @@
       </div>
       <p class="lead" data-i18n="lead">מצלמים מנה, ו-Okeat Lens מזהה אותה ומראה כמה קלוריות, חלבון ופחמימות יש בה, את אבות המזון, האלרגנים, ואם היא כנראה טבעונית, ללא גלוטן ואיזו כשרות מתאימה לה.</p>
       <div class="stats">
-        <button type="button" data-act="browse"><b data-count="135">0</b><span data-i18n="stDishes">מנות ומאכלים</span></button>
+        <button type="button" data-act="browse"><b data-count="171">0</b><span data-i18n="stDishes">מנות ומאכלים</span></button>
         <button type="button" data-act="random"><b data-count="6">0</b><span data-i18n="stFam">אבות מזון</span></button>
         <button type="button" data-act="allergen"><b data-count="9">0</b><span data-i18n="stAll">אלרגנים</span></button>
         <button type="button" data-act="lang"><b data-count="2">0</b><span data-i18n="stUp">שפות</span></button>
@@ -119,8 +119,20 @@
         <ul class="macros" id="macros"></ul>
       </div>
 
-      <h3 class="sec rv" data-ic="📊" data-i18n="dailyH">מתוך הצריכה היומית</h3>
-      <p class="sub small" data-i18n="dailySub">לפי ערכי ייחוס של 2,000 קלוריות ליום</p>
+      <section class="boost rv" id="boost">
+        <h3 class="sec" data-ic="🧪" data-i18n="boostH">לשדרג את הצלחת</h3>
+        <p class="sub small" data-i18n="boostSub">רוצים יותר חלבון, פחמימה או סיבים? בחרו, הוסיפו, וכל המספרים מתעדכנים</p>
+        <div class="boost-goals" id="boostGoals"></div>
+        <div class="addon-grid" id="addonGrid"></div>
+        <div class="extras" id="extrasBox" hidden>
+          <div class="extras-head"><b data-i18n="onPlate">נוסף לצלחת</b><button class="link-btn" id="clearExtras" type="button" data-i18n="clearExtras">הסרת הכל</button></div>
+          <div class="extras-list" id="extrasList"></div>
+          <p class="delta" id="extrasDelta"></p>
+        </div>
+      </section>
+
+      <div class="daily-head rv"><h3 class="sec" data-ic="📊" data-i18n="dailyH">מתוך הצריכה היומית</h3><button class="link-btn goal-link" type="button" data-i18n="changeGoal">🎯 שינוי היעד</button></div>
+      <p class="sub small" id="dailySub"></p>
       <ol class="bars daily rv" id="daily"></ol>
 
       <h3 class="sec rv" data-ic="🥚" data-i18n="famH">אבות המזון בצלחת</h3>
@@ -168,7 +180,51 @@
         <div class="stack" id="mealStack"><i class="sp"></i><i class="sc"></i><i class="sf"></i></div>
         <ul class="macros mini" id="mealMacros"></ul>
       </div>
+      <p class="left" id="mealLeft"></p>
       <ol class="bars daily" id="mealDaily"></ol>
+    </section>
+
+    <section class="card goal" id="goal">
+      <div class="goal-head">
+        <h2 data-i18n="goalH">🎯 היעד היומי שלי</h2>
+        <button class="link-btn" id="resetGoal" type="button" data-i18n="resetGoal" hidden>חזרה לברירת המחדל</button>
+      </div>
+      <div class="goal-now" id="goalNow"></div>
+      <div class="seg-pill tabs" id="goalTabs" role="tablist">
+        <button type="button" data-tab="quick" class="on" data-i18n="tabQuick">בחירה מהירה</button><button type="button" data-tab="calc" data-i18n="tabCalc">מחשבון</button><button type="button" data-tab="custom" data-i18n="tabCustom">ידני</button>
+      </div>
+      <div class="gpane" data-pane="quick"><div class="presets" id="presets"></div></div>
+      <form class="gpane calc" data-pane="calc" id="calcForm" hidden novalidate>
+        <div class="calc-grid">
+          <div class="field"><span data-i18n="sex">מין</span>
+            <div class="seg-pill mini" id="sexSeg"><button type="button" data-v="f" class="on" data-i18n="female">אישה</button><button type="button" data-v="m" data-i18n="male">גבר</button></div></div>
+          <label class="field"><span data-i18n="age">גיל</span><input name="age" type="number" inputmode="numeric" min="14" max="100" required></label>
+          <label class="field"><span data-i18n="height">גובה (ס״מ)</span><input name="height" type="number" inputmode="numeric" min="120" max="230" required></label>
+          <label class="field"><span data-i18n="weight">משקל (ק״ג)</span><input name="weight" type="number" inputmode="decimal" min="30" max="250" step="0.1" required></label>
+          <label class="field wide"><span data-i18n="activity">כמה אתם זזים?</span>
+            <select name="act">
+              <option value="1.2" data-i18n="act1">כמעט לא, עבודה מול מחשב</option>
+              <option value="1.375" data-i18n="act2">קצת, אימון 1 עד 3 פעמים בשבוע</option>
+              <option value="1.55" data-i18n="act3" selected>בינוני, 3 עד 5 אימונים בשבוע</option>
+              <option value="1.725" data-i18n="act4">הרבה, אימון כמעט כל יום</option>
+              <option value="1.9" data-i18n="act5">מאוד, עבודה פיזית או ספורט תחרותי</option>
+            </select></label>
+          <div class="field wide"><span data-i18n="aim">המטרה שלי</span>
+            <div class="seg-pill mini" id="aimSeg"><button type="button" data-v="lose" data-i18n="lose">לרדת במשקל</button><button type="button" data-v="keep" class="on" data-i18n="keep">לשמור</button><button type="button" data-v="gain" data-i18n="gain">לעלות במסה</button></div></div>
+        </div>
+        <button class="btn primary wide" type="submit" data-i18n="calcBtn">🧮 חישוב</button>
+        <div class="calc-out" id="calcOut" hidden></div>
+      </form>
+      <form class="gpane" data-pane="custom" id="customForm" hidden>
+        <div class="calc-grid">
+          <label class="field"><span data-i18n="kcal">קלוריות</span><input name="kcal" type="number" min="800" max="6000" required></label>
+          <label class="field"><span data-i18n="proteinG">חלבון (גרם)</span><input name="protein" type="number" min="10" max="400" required></label>
+          <label class="field"><span data-i18n="carbsG">פחמימות (גרם)</span><input name="carbs" type="number" min="0" max="900" required></label>
+          <label class="field"><span data-i18n="fatG">שומן (גרם)</span><input name="fat" type="number" min="10" max="300" required></label>
+        </div>
+        <button class="btn primary wide" type="submit" data-i18n="saveGoal">✓ שמירה כיעד שלי</button>
+      </form>
+      <p class="sub small" data-i18n="goalNote">הערכה כללית בלבד ולא תחליף לייעוץ של דיאטנית.</p>
     </section>
 
     <section class="card settings">
@@ -192,6 +248,8 @@
       <input id="pickSearch" type="search" autocomplete="off" data-i18n-ph="search" placeholder="חיפוש מנה…">
       <button class="x" value="close" aria-label="Close">✕</button>
     </form>
+    <p class="pick-title" id="pickTitle" hidden></p>
+    <div class="pick-filters" id="pickFilters"></div>
     <div class="pick-grid" id="pickGrid"></div>
   </dialog>
 

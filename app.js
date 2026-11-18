@@ -27,7 +27,7 @@ const I18N = {
     m_Fe: "ברזל", m_Ca: "סידן", m_K: "אשלגן", m_Mg: "מגנזיום", m_Zn: "אבץ", waterPct: "{n}% מים",
     note: "הערכים הם הערכה למנה טיפוסית, וגם התגיות הן רמזים ולא מידע מאומת. ב-Okeat רק הקהילה מאשרת.",
     addMeal: "➕ הוספה לארוחה שלי", share: "📸 כרטיס לשיתוף", compare: "⚖️ השוואה", unpin: "⚖️ ביטול השוואה",
-    pinned: "נשמר להשוואה. עכשיו זהו או בחרו מנה נוספת", vs: "מול", added: "נוסף לארוחה ✓",
+    vs: "מול", added: "נוסף לארוחה ✓",
     myMeal: "הארוחה שלי", mealH: "🍽️ הארוחה שלי", clear: "ניקוי", remove: "הסרה",
     topGuesses: "עוד ניחושים · לחיצה מחליפה", findOkeat: "חיפוש מקומות ב-Okeat 🗺️", search: "חיפוש מנה…",
     engine: "מנוע זיהוי", mBrowser: "בדפדפן (מיידי)", mApi: "מודל Food-101 (API)", apiUrl: "כתובת ה-API",
@@ -37,6 +37,23 @@ const I18N = {
     apiDown: "ה-API לא עונה. הפעילו אותו עם uvicorn lens.api:app", notImage: "זה לא קובץ תמונה", saved: "הכרטיס נשמר ✓",
     vegan: "🌱 טבעוני", vegetarian: "🥕 צמחוני", gluten_free: "🌾 ללא גלוטן",
     meat: "🥩 בשרי", dairy: "🧀 חלבי", parve: "🍃 פרווה", not_kosher: "⚠️ כנראה לא כשר",
+    boostH: "לשדרג את הצלחת", boostSub: "רוצים יותר חלבון, פחמימה או סיבים? בחרו, הוסיפו, וכל המספרים מתעדכנים",
+    b_protein: "💪 יותר חלבון", b_carbs: "⚡ יותר פחמימה", b_fiber: "🌿 יותר סיבים", b_fat: "🫒 שומן טוב", b_veg: "🥦 יותר ויטמינים", b_light: "🪶 קליל יותר",
+    rec: "מומלץ", recTip: "💡 ביחס ליעד שלכם, לארוחה הזאת חסר בעיקר {x}", onPlate: "נוסף לצלחת", clearExtras: "הסרת הכל",
+    deltaTxt: "עם התוספות: {k} קלוריות · {p} גרם חלבון · {c} גרם פחמימות", kosherFit: "מוצגות רק תוספות שמתאימות לכשרות של המנה",
+    plus: "הוספה", vitShort: "ויטמינים", onlyK: "{n} קלוריות", withExtras: "+ תוספות",
+    dailySub: "לפי ערכי ייחוס של 2,000 קלוריות ליום", dailyGoal: "לפי היעד שלכם: {n} קלוריות ליום", changeGoal: "🎯 שינוי היעד",
+    leftK: "נשארו לכם היום עוד {n} קלוריות ו-{p} גרם חלבון ליעד 🎯", overK: "עברתם את היעד היומי ב-{n} קלוריות", hitK: "בדיוק ביעד היומי 🎉",
+    goalH: "🎯 היעד היומי שלי", resetGoal: "חזרה לברירת המחדל", tabQuick: "בחירה מהירה", tabCalc: "מחשבון", tabCustom: "ידני",
+    p1500: "קליל", p1800: "מתון", p2000: "ממוצע", p2500: "פעיל", p3000: "ספורטיבי",
+    sex: "מין", female: "אישה", male: "גבר", age: "גיל", height: "גובה (ס״מ)", weight: "משקל (ק״ג)", activity: "כמה אתם זזים?",
+    act1: "כמעט לא, עבודה מול מחשב", act2: "קצת, אימון 1 עד 3 פעמים בשבוע", act3: "בינוני, 3 עד 5 אימונים בשבוע", act4: "הרבה, אימון כמעט כל יום", act5: "מאוד, עבודה פיזית או ספורט תחרותי",
+    aim: "המטרה שלי", lose: "לרדת במשקל", keep: "לשמור", gain: "לעלות במסה", calcBtn: "🧮 חישוב", saveGoal: "✓ שמירה כיעד שלי",
+    proteinG: "חלבון (גרם)", carbsG: "פחמימות (גרם)", fatG: "שומן (גרם)", goalNote: "הערכה כללית בלבד ולא תחליף לייעוץ של דיאטנית.",
+    bmr: "במנוחה", tdee: "שריפה יומית", target: "היעד שלכם", goalSaved: "היעד היומי עודכן ✓", goalReset: "חזרנו ל-2,000 קלוריות", fixFields: "בדקו את השדות המסומנים",
+    nowGoal: "היעד שלכם", defGoal: "ברירת מחדל",
+    pickCmp: "⚖️ בחרו מנה להשוואה מול {d}", pf_all: "הכל", pf_il: "🇮🇱 ישראלי", pf_vegan: "🌱 טבעוני", pf_gluten_free: "🌾 ללא גלוטן", pf_protein: "💪 עשיר בחלבון", pf_light: "🪶 עד 300 קלוריות", pf_sweet: "🍰 מתוקים", noMatch: "לא נמצאה מנה 🤔",
+    cmpSwap: "🔄 להחליף ביניהן", cmpOther: "✏️ מנה אחרת", cmpClose: "✕ סגירה", better: "עדיף", cmpWin: "🏆 {d} עדיפה ב-{n} מתוך {m}", cmpTie: "🤝 תיקו, שתיהן טובות", cmpNote: "עדיף = יותר חלבון וסיבים, פחות קלוריות, סוכר, שומן ונתרן",
     cardFoot: "הערכה למנה טיפוסית · Okeat Lens",
   },
   en: {
@@ -59,7 +76,7 @@ const I18N = {
     m_Fe: "Iron", m_Ca: "Calcium", m_K: "Potassium", m_Mg: "Magnesium", m_Zn: "Zinc", waterPct: "{n}% water",
     note: "Values are estimates for a typical serving, and the tags are hints, not verified facts. On Okeat only the community confirms.",
     addMeal: "➕ Add to my meal", share: "📸 Share card", compare: "⚖️ Compare", unpin: "⚖️ Stop comparing",
-    pinned: "Saved for comparing. Now scan or pick another dish", vs: "vs", added: "Added to your meal ✓",
+    vs: "vs", added: "Added to your meal ✓",
     myMeal: "My meal", mealH: "🍽️ My meal", clear: "Clear", remove: "Remove",
     topGuesses: "Other guesses · tap to switch", findOkeat: "Find places on Okeat 🗺️", search: "Search a dish…",
     engine: "Recognition engine", mBrowser: "In the browser (instant)", mApi: "Food-101 model (API)", apiUrl: "API address",
@@ -69,6 +86,23 @@ const I18N = {
     apiDown: "The API isn't answering. Start it with uvicorn lens.api:app", notImage: "That's not an image file", saved: "Card saved ✓",
     vegan: "🌱 Vegan", vegetarian: "🥕 Vegetarian", gluten_free: "🌾 Gluten-free",
     meat: "🥩 Meat", dairy: "🧀 Dairy", parve: "🍃 Parve", not_kosher: "⚠️ Likely not kosher",
+    boostH: "Boost the plate", boostSub: "Want more protein, carbs or fiber? Pick, add, and every number updates",
+    b_protein: "💪 More protein", b_carbs: "⚡ More carbs", b_fiber: "🌿 More fiber", b_fat: "🫒 Good fats", b_veg: "🥦 More vitamins", b_light: "🪶 Lighter",
+    rec: "Tip", recTip: "💡 Compared to your goal, this meal is mostly low on {x}", onPlate: "Added to the plate", clearExtras: "Remove all",
+    deltaTxt: "With extras: {k} calories · {p} g protein · {c} g carbs", kosherFit: "Only extras that fit the dish's kosher type are shown",
+    plus: "Add", vitShort: "Vitamins", onlyK: "{n} calories", withExtras: "+ extras",
+    dailySub: "Based on reference values for 2,000 calories a day", dailyGoal: "Based on your goal: {n} calories a day", changeGoal: "🎯 Change goal",
+    leftK: "{n} calories and {p} g protein left for today's goal 🎯", overK: "You are {n} calories over your daily goal", hitK: "Right on your daily goal 🎉",
+    goalH: "🎯 My daily goal", resetGoal: "Back to default", tabQuick: "Quick pick", tabCalc: "Calculator", tabCustom: "Manual",
+    p1500: "Light", p1800: "Moderate", p2000: "Average", p2500: "Active", p3000: "Athletic",
+    sex: "Sex", female: "Female", male: "Male", age: "Age", height: "Height (cm)", weight: "Weight (kg)", activity: "How active are you?",
+    act1: "Barely, desk job", act2: "A little, 1 to 3 workouts a week", act3: "Moderate, 3 to 5 workouts a week", act4: "A lot, training almost daily", act5: "Very, physical job or competitive sport",
+    aim: "My goal", lose: "Lose weight", keep: "Maintain", gain: "Build mass", calcBtn: "🧮 Calculate", saveGoal: "✓ Save as my goal",
+    proteinG: "Protein (g)", carbsG: "Carbs (g)", fatG: "Fat (g)", goalNote: "A general estimate, not a replacement for a dietitian.",
+    bmr: "At rest", tdee: "Daily burn", target: "Your goal", goalSaved: "Daily goal updated ✓", goalReset: "Back to 2,000 calories", fixFields: "Check the highlighted fields",
+    nowGoal: "Your goal", defGoal: "Default",
+    pickCmp: "⚖️ Pick a dish to compare with {d}", pf_all: "All", pf_il: "🇮🇱 Israeli", pf_vegan: "🌱 Vegan", pf_gluten_free: "🌾 Gluten-free", pf_protein: "💪 High protein", pf_light: "🪶 Up to 300 calories", pf_sweet: "🍰 Sweets", noMatch: "No dish found 🤔",
+    cmpSwap: "🔄 Swap them", cmpOther: "✏️ Another dish", cmpClose: "✕ Close", better: "better", cmpWin: "🏆 {d} wins {n} of {m}", cmpTie: "🤝 A tie, both are fine", cmpNote: "Better = more protein and fiber, less calories, sugar, fat and sodium",
     cardFoot: "Estimate for a typical serving · Okeat Lens",
   },
 };
@@ -92,10 +126,66 @@ const GROUP_ICON = { vegetables: "🥦", fruit: "🍎", grains: "🌾", protein:
 const ALLERGEN_ICON = { gluten: "🌾", milk: "🥛", eggs: "🥚", nuts: "🌰", peanuts: "🥜", fish: "🐟", shellfish: "🦐", soy: "🫘", sesame: "⚪" };
 const CIRC = 2 * Math.PI * 48;
 
+/* Extras you can add to the plate. Values are per unit: [key, icon, he, en, unit he, unit en, g, kcal, protein, carbs, fat, fiber, sugar, sodium, kosher, groups, allergens, vitamins, minerals] */
+const ADDON_ROWS = [
+  ["egg", "🥚", "ביצה קשה", "Boiled egg", "ביצה", "1 egg", 50, 78, 6.3, 0.6, 5.3, 0, 0.6, 62, "parve", "protein", "eggs", "B12 D", "Fe"],
+  ["chicken", "🍗", "חזה עוף בגריל", "Grilled chicken breast", "100 גרם", "100 g", 100, 165, 31, 0, 3.6, 0, 0, 74, "meat", "protein", "", "B B12", "Zn K"],
+  ["tuna", "🐟", "טונה במים", "Tuna in water", "קופסה", "1 can", 80, 90, 20, 0, 1, 0, 0, 250, "parve", "protein", "fish", "B12 D", "Fe"],
+  ["salmon", "🍣", "סלמון אפוי", "Baked salmon", "100 גרם", "100 g", 100, 206, 22, 0, 12, 0, 0, 60, "parve", "protein", "fish", "D B12", "K"],
+  ["yogurt", "🥣", "יוגורט יווני 0%", "Greek yogurt 0%", "גביע", "1 cup", 170, 100, 17, 6, 0.7, 0, 6, 60, "dairy", "dairy protein", "milk", "B12", "Ca"],
+  ["cottage", "🧀", "קוטג׳ 5%", "Cottage cheese 5%", "חצי גביע", "half a tub", 125, 120, 14, 4, 6, 0, 4, 450, "dairy", "dairy protein", "milk", "B12", "Ca"],
+  ["cheese", "🧀", "גבינה צהובה", "Yellow cheese", "פרוסה", "1 slice", 20, 70, 5, 0.2, 5.5, 0, 0, 120, "dairy", "dairy", "milk", "A B12", "Ca Zn"],
+  ["milk", "🥛", "חלב 3%", "Milk 3%", "כוס", "1 glass", 240, 145, 8, 11.5, 7.5, 0, 11.5, 105, "dairy", "dairy", "milk", "B12 D A", "Ca K"],
+  ["tofu", "🫘", "טופו", "Tofu", "100 גרם", "100 g", 100, 144, 17, 3, 9, 2, 0.6, 14, "parve", "protein", "soy", "", "Ca Fe Mg"],
+  ["edamame", "🫛", "אדממה", "Edamame", "כוס", "1 cup", 155, 188, 18.4, 13.8, 8, 8, 3.4, 9, "parve", "vegetables protein", "soy", "C K", "Fe Mg"],
+  ["lentils", "🍲", "עדשים מבושלות", "Cooked lentils", "כוס", "1 cup", 200, 230, 18, 40, 0.8, 16, 3.6, 4, "parve", "protein", "", "B", "Fe K Mg"],
+  ["hummus", "🥙", "חומוס", "Hummus", "3 כפות", "3 tbsp", 50, 83, 4, 7, 5, 3, 0.1, 190, "parve", "protein", "sesame", "B", "Fe Mg"],
+  ["tahini", "🥄", "טחינה גולמית", "Raw tahini", "כף", "1 tbsp", 15, 89, 2.6, 3.2, 8, 1.4, 0, 5, "parve", "", "sesame", "B E", "Ca Mg"],
+  ["rice", "🍚", "אורז לבן", "White rice", "כוס", "1 cup", 160, 205, 4.3, 45, 0.4, 0.6, 0, 2, "parve", "grains", "", "B", "Mg"],
+  ["quinoa", "🌾", "קינואה", "Quinoa", "כוס", "1 cup", 185, 222, 8, 39, 3.6, 5, 1.6, 13, "parve", "grains", "", "B E", "Mg Fe Zn"],
+  ["bread", "🍞", "לחם מלא", "Whole wheat bread", "פרוסה", "1 slice", 30, 75, 3.6, 13, 1, 2, 1.5, 140, "parve", "grains", "gluten", "B", "Fe Mg"],
+  ["pasta", "🍝", "פסטה", "Pasta", "כוס", "1 cup", 140, 220, 8, 43, 1.3, 2.5, 0.8, 1, "parve", "grains", "gluten", "B", "Fe"],
+  ["oats", "🥣", "שיבולת שועל", "Oats", "חצי כוס", "half a cup", 40, 150, 5, 27, 2.7, 4, 0.4, 2, "parve", "grains", "gluten", "B", "Fe Mg Zn"],
+  ["sweetpotato", "🍠", "בטטה אפויה", "Baked sweet potato", "בטטה", "1 sweet potato", 150, 135, 3, 31, 0.2, 5, 9, 54, "parve", "vegetables", "", "A C", "K"],
+  ["potato", "🥔", "תפוח אדמה אפוי", "Baked potato", "תפוח אדמה", "1 potato", 170, 160, 4.3, 37, 0.2, 3.8, 2, 17, "parve", "vegetables", "", "C B", "K"],
+  ["banana", "🍌", "בננה", "Banana", "בננה", "1 banana", 120, 105, 1.3, 27, 0.4, 3.1, 14, 1, "parve", "fruit", "", "B C", "K Mg"],
+  ["dates", "🌴", "תמרים מג׳הול", "Medjool dates", "3 תמרים", "3 dates", 72, 200, 1.3, 54, 0.1, 4.8, 48, 1, "parve", "fruit", "", "B", "K Mg"],
+  ["apple", "🍎", "תפוח", "Apple", "תפוח", "1 apple", 180, 95, 0.5, 25, 0.3, 4.4, 19, 2, "parve", "fruit", "", "C", "K"],
+  ["berries", "🍓", "תותים", "Strawberries", "כוס", "1 cup", 150, 48, 1, 11.5, 0.5, 3, 7, 2, "parve", "fruit", "", "C", "K Mg"],
+  ["salad", "🥗", "סלט ירקות", "Veggie salad", "קערה", "1 bowl", 150, 30, 1.3, 6, 0.3, 2, 3.5, 10, "parve", "vegetables", "", "A C K", "K"],
+  ["broccoli", "🥦", "ברוקולי מאודה", "Steamed broccoli", "כוס", "1 cup", 90, 31, 2.6, 6, 0.3, 2.4, 1.5, 30, "parve", "vegetables", "", "C K A", "K Ca"],
+  ["avocado", "🥑", "אבוקדו", "Avocado", "חצי", "half", 70, 112, 1.4, 6, 10.3, 4.7, 0.5, 5, "parve", "vegetables", "", "E K C", "K"],
+  ["almonds", "🌰", "שקדים", "Almonds", "חופן", "a handful", 28, 164, 6, 6, 14, 3.5, 1.2, 0, "parve", "", "nuts", "E", "Mg Ca"],
+  ["pb", "🥜", "חמאת בוטנים", "Peanut butter", "כף", "1 tbsp", 16, 94, 3.5, 3.5, 8, 1, 1.5, 70, "parve", "", "peanuts", "E B", "Mg"],
+  ["oliveoil", "🫒", "שמן זית", "Olive oil", "כף", "1 tbsp", 13, 119, 0, 0, 13.5, 0, 0, 0, "parve", "", "", "E K", ""],
+];
+const ADDONS = {};
+ADDON_ROWS.forEach(([key, ic, he, en, uhe, uen, g, kcal, protein, carbs, fat, fiber, sugar, sodium_mg, kosher, groups, al, vit, min]) => {
+  ADDONS["x_" + key] = { key: "x_" + key, addon: true, ic, he, en, uhe, uen, kosher, tags: [], groups: groups.split(" ").filter(Boolean),
+    allergens: al.split(" ").filter(Boolean),
+    nutrition: { serving_g: g, kcal, protein, carbs, fat, fiber, sugar, sodium_mg, water_pct: 60, vitamins: vit.split(" ").filter(Boolean), minerals: min.split(" ").filter(Boolean) } };
+});
+const BOOST = {
+  protein: ["chicken", "tuna", "salmon", "egg", "yogurt", "cottage", "tofu", "edamame", "lentils", "cheese", "hummus", "almonds"],
+  carbs: ["rice", "quinoa", "sweetpotato", "potato", "bread", "pasta", "oats", "banana", "dates", "lentils"],
+  fiber: ["lentils", "edamame", "broccoli", "avocado", "salad", "berries", "apple", "oats", "quinoa", "hummus", "bread", "almonds"],
+  fat: ["avocado", "oliveoil", "tahini", "almonds", "pb", "salmon", "egg", "cheese"],
+  veg: ["salad", "broccoli", "sweetpotato", "berries", "apple", "banana", "avocado", "edamame"],
+  light: ["salad", "broccoli", "berries", "apple", "egg", "yogurt", "tuna", "cottage"],
+};
+const PRESETS = [1500, 1800, 2000, 2500, 3000];
+const PICK_FILTERS = {
+  all: () => true, il: (d) => d.il, vegan: (d) => d.tags.includes("vegan"), gluten_free: (d) => d.tags.includes("gluten_free"),
+  protein: (d) => d.nutrition.protein >= 20, light: (d) => d.nutrition.kcal <= 300, sweet: (d) => (d.groups || []).includes("treats"),
+};
+
 let lang = store.get("lang", "he");
 let labels = {}, all = [], ref = { kcal: 2000, protein: 50, carbs: 260, fat: 70, fiber: 30, sugar: 90, sodium_mg: 2400 };
 let mobilenetModel = null, lastBlob = null, lastItems = null, current = null, portions = 1, picked = false;
-let meal = store.get("meal", []), pinned = null, history = store.get("history", []);
+let meal = store.get("meal", []), history = store.get("history", []);
+let extras = {}, extrasFor = null, boostGoal = null, cmpKey = null, cmpP = 1, pickMode = "pick", pickFilter = "all";
+let baseRef = { ...ref }, goal = store.get("goal", null), sex = store.get("sex", "f"), aim = store.get("aim", "keep");
+if (goal) ref = goal;
 
 const t = (k, v = {}) => String(I18N[lang][k] ?? I18N.en[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x]);
 const nm = (d) => (lang === "he" ? d.he : d.en);
@@ -107,6 +197,23 @@ function scale(n, p) {
   MACRO_KEYS.forEach((k) => (o[k] = k === "sodium_mg" ? Math.round(n[k] * p) : Math.round(n[k] * p * 10) / 10));
   return o;
 }
+const NUM_KEYS = ["serving_g", "kcal", ...MACRO_KEYS];
+function sumN(list) {
+  const o = { serving_g: 0, kcal: 0, protein: 0, carbs: 0, fat: 0, fiber: 0, sugar: 0, sodium_mg: 0, vitamins: [], minerals: [] };
+  let w = 0;
+  list.forEach(([n, p]) => {
+    const s = scale(n, p);
+    NUM_KEYS.forEach((k) => (o[k] += s[k]));
+    w += (s.water_pct || 0) * s.serving_g;
+    o.vitamins = [...new Set([...o.vitamins, ...(s.vitamins || [])])];
+    o.minerals = [...new Set([...o.minerals, ...(s.minerals || [])])];
+  });
+  o.water_pct = Math.round(w / Math.max(o.serving_g, 1));
+  ["protein", "carbs", "fat", "fiber", "sugar"].forEach((k) => (o[k] = Math.round(o[k] * 10) / 10));
+  return o;
+}
+const plateList = () => [[current.nutrition, portions], ...Object.entries(extras).map(([k, q]) => [labels[k].nutrition, q])];
+const plateGroups = () => new Set([...(current.groups || []), ...Object.keys(extras).flatMap((k) => labels[k].groups)]);
 function calSplit(n) {
   const kc = { protein: 4 * n.protein, carbs: 4 * n.carbs, fat: 9 * n.fat };
   const tot = kc.protein + kc.carbs + kc.fat || 1;
@@ -146,6 +253,7 @@ function applyLang() {
   if (lastItems) render(lastItems, false);
   renderMeal(false);
   renderHistory();
+  renderGoal();
   if ($("picker").open) fillPicker();
 }
 
@@ -179,7 +287,12 @@ async function loadLabels() {
     const data = await (await fetch("labels.json")).json();
     all = [...data.classes, ...(data.extras || [])];
     all.forEach((c) => (labels[c.key] = c));
-    if (data.daily_reference) ref = data.daily_reference;
+    Object.values(ADDONS).forEach((a) => (labels[a.key] = a));
+    if (data.daily_reference) baseRef = data.daily_reference;
+    ref = goal || baseRef;
+    const st = document.querySelector('.stats [data-act="browse"] b');
+    st.dataset.count = all.length;
+    if (Number(st.dataset.v)) countUp(st, all.length, 600);
   } catch { toast("labels.json?"); }
 }
 
@@ -223,6 +336,8 @@ function render(items, animate = true) {
   lastItems = items;
   const best = items[0];
   current = best;
+  if (extrasFor !== best.key) { extras = {}; boostGoal = null; extrasFor = best.key; }
+  if (cmpKey === best.key) cmpKey = null;
   $("dishName").textContent = nm(best);
   $("dishOther").textContent = lang === "he" ? best.en : best.he;
   document.querySelector("#result .eyebrow").textContent = t(picked ? "youPicked" : "itLooks");
@@ -328,7 +443,8 @@ function dailyBars(ol, n) {
 
 function renderNutrition(animate) {
   if (!current?.nutrition) return;
-  const n = scale(current.nutrition, portions);
+  const n = sumN(plateList());
+  $("dailySub").textContent = goal ? t("dailyGoal", { n: fmt(ref.kcal) }) : t("dailySub");
   document.querySelectorAll("#portionSeg button").forEach((b) => b.classList.toggle("on", Number(b.dataset.p) === portions));
   $("grams").textContent = `≈ ${n.serving_g} ${t("gram")}`;
   countUp($("kcal"), n.kcal, animate ? 1100 : 600);
@@ -352,7 +468,7 @@ function renderNutrition(animate) {
     box.appendChild(div);
   });
 
-  const g = new Set(current.groups || []);
+  const g = plateGroups();
   const plate = $("hplate");
   plate.querySelector(".q-veg").classList.toggle("on", g.has("vegetables") || g.has("fruit"));
   plate.querySelector(".q-grain").classList.toggle("on", g.has("grains"));
@@ -364,21 +480,144 @@ function renderNutrition(animate) {
     : missing.length === 0 ? t("tipAll") : `${t("tipAdd")} ${missing.map((m) => GROUP_ICON[m] + " " + t("g_" + m)).join(", ")}`;
   $("plateLegend").innerHTML = ["vegetables", "fruit", "grains", "protein", "dairy", "treats"]
     .map((x) => `<span class="${g.has(x) ? "on" : ""}">${GROUP_ICON[x]} ${t("g_" + x)}</span>`).join("");
-  $("pinBtn").textContent = pinned && pinned.key === current.key ? t("unpin") : t("compare");
+  renderBoost();
 }
 
 function renderCompare() {
   const box = $("compare");
-  if (!pinned || !current || pinned.key === current.key) { box.hidden = true; return; }
-  const a = scale(current.nutrition, portions), b = scale(pinned.n, pinned.p);
-  const rows = ["kcal", "protein", "carbs", "fat", "fiber", "sugar"].map((k) => {
-    const max = Math.max(a[k], b[k], 1);
+  $("pinBtn").textContent = cmpKey ? t("unpin") : t("compare");
+  if (!cmpKey || !current || !labels[cmpKey]) { box.hidden = true; box.innerHTML = ""; return; }
+  const A = sumN(plateList()), B = scale(labels[cmpKey].nutrition, cmpP), dB = labels[cmpKey];
+  const keys = ["kcal", "protein", "carbs", "fat", "fiber", "sugar", "sodium_mg"];
+  const higher = { protein: 1, fiber: 1 };
+  let wa = 0, wb = 0;
+  const rows = keys.map((k) => {
+    const max = Math.max(A[k], B[k], 1);
+    let win = "";
+    if (k !== "carbs" && A[k] !== B[k]) {
+      const aBetter = higher[k] ? A[k] > B[k] : A[k] < B[k];
+      win = aBetter ? "a" : "b";
+      aBetter ? wa++ : wb++;
+    }
+    const unit = k === "kcal" ? "" : k === "sodium_mg" ? (lang === "he" ? " מ״ג" : " mg") : " " + t("gram");
     return `<div class="cmp-row"><span>${t(k)}</span>
-      <div class="cmp-bar a"><i style="--w:${(100 * a[k]) / max}%"></i><b>${fmt(a[k])}</b></div>
-      <div class="cmp-bar b"><i style="--w:${(100 * b[k]) / max}%"></i><b>${fmt(b[k])}</b></div></div>`;
+      <div class="cmp-bar a${win === "a" ? " win" : ""}"><i style="--w:${(100 * A[k]) / max}%"></i><b>${fmt(A[k])}${unit}</b></div>
+      <div class="cmp-bar b${win === "b" ? " win" : ""}"><i style="--w:${(100 * B[k]) / max}%"></i><b>${fmt(B[k])}${unit}</b></div></div>`;
   }).join("");
-  box.innerHTML = `<div class="cmp-head"><b class="a">${nm(current)}</b><span>${t("vs")}</span><b class="b">${nm(labels[pinned.key])}</b></div>${rows}`;
+  const m = wa + wb;
+  const verdict = wa === wb ? t("cmpTie") : t("cmpWin", { d: wa > wb ? nm(current) : nm(dB), n: Math.max(wa, wb), m });
+  const seg = [0.5, 1, 1.5, 2].map((p) => `<button type="button" data-bp="${p}" class="${p === cmpP ? "on" : ""}">${p === 0.5 ? "½" : p === 1.5 ? "1½" : p}</button>`).join("");
+  box.innerHTML = `<div class="cmp-head"><div class="cmp-name a"><b></b><small>×${portions}${Object.keys(extras).length ? " " + t("withExtras") : ""}</small></div>
+    <span class="vs">${t("vs")}</span><div class="cmp-name b"><b></b><div class="seg-pill mini">${seg}</div></div></div>
+    ${rows}<p class="verdict">${verdict}</p><p class="sub small">${t("cmpNote")}</p>
+    <div class="cmp-actions"><button class="btn soft" type="button" data-cmp="swap">${t("cmpSwap")}</button><button class="btn mint" type="button" data-cmp="other">${t("cmpOther")}</button><button class="btn ghost" type="button" data-cmp="close">${t("cmpClose")}</button></div>`;
+  box.querySelector(".cmp-name.a b").textContent = nm(current);
+  box.querySelector(".cmp-name.b b").textContent = nm(dB);
   box.hidden = false;
+}
+
+/* ---------- boost the plate ---------- */
+function kosherOk(a) {
+  if (current.kosher === "meat") return a.kosher !== "dairy";
+  if (current.kosher === "dairy") return a.kosher !== "meat";
+  return true;
+}
+function addonMetric(a, goalKey) {
+  const n = a.nutrition;
+  if (goalKey === "veg") return n.vitamins.length ? `${t("vitShort")} ${n.vitamins.join(" · ")}` : t("onlyK", { n: n.kcal });
+  if (goalKey === "light") return t("onlyK", { n: n.kcal });
+  return `+${fmt(n[goalKey])} ${t("gram")} ${t(goalKey)}`;
+}
+function renderBoost() {
+  if (!current?.nutrition) return;
+  const n = sumN(plateList());
+  const share = (k) => n[k] / (ref[k] / 3);
+  const low = ["protein", "fiber", "carbs"].map((k) => [k, share(k)]).sort((x, y) => x[1] - y[1])[0];
+  const rec = low[1] < 0.7 ? low[0] : n.kcal > ref.kcal * 0.5 ? "light" : null;
+  $("boostGoals").innerHTML = Object.keys(BOOST).map((k) =>
+    `<button type="button" data-goal="${k}" class="${k === boostGoal ? "on" : ""}${k === rec ? " rec" : ""}">${t("b_" + k)}${k === rec ? `<em>${t("rec")}</em>` : ""}</button>`).join("");
+  const grid = $("addonGrid");
+  grid.innerHTML = "";
+  if (!boostGoal && rec && rec !== "light") grid.innerHTML = `<p class="rec-tip">${t("recTip", { x: t(rec) })}</p>`;
+  if (boostGoal) {
+    BOOST[boostGoal].map((k) => ADDONS["x_" + k]).filter(kosherOk).forEach((a, i) => {
+      const q = extras[a.key] || 0;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "addon" + (q ? " has" : "");
+      b.style.animationDelay = i * 0.04 + "s";
+      b.dataset.add = a.key;
+      b.innerHTML = `<span class="ai">${a.ic}</span><b></b><small>${lang === "he" ? a.uhe : a.uen} · ${a.nutrition.kcal} ${t("kcal")}</small><em>${addonMetric(a, boostGoal)}</em><span class="plus">${q ? "×" + q : "+"}</span>`;
+      b.querySelector("b").textContent = nm(a);
+      grid.appendChild(b);
+    });
+    if (current.kosher === "meat" || current.kosher === "dairy") grid.insertAdjacentHTML("beforeend", `<p class="sub small kfit">${t("kosherFit")}</p>`);
+  }
+  const keys = Object.keys(extras);
+  $("extrasBox").hidden = !keys.length;
+  $("extrasList").innerHTML = keys.map((k) => `<span class="xchip"><button type="button" data-dec="${k}" aria-label="-">−</button>${labels[k].ic} <b>${nm(labels[k])}</b> ×${extras[k]}<button type="button" data-inc="${k}" aria-label="+">+</button></span>`).join("");
+  if (keys.length) {
+    const base = scale(current.nutrition, portions);
+    $("extrasDelta").textContent = t("deltaTxt", { k: `${fmt(n.kcal)} (+${fmt(n.kcal - base.kcal)})`, p: `${fmt(n.protein)} (+${fmt(n.protein - base.protein)})`, c: `${fmt(n.carbs)} (+${fmt(n.carbs - base.carbs)})` });
+  }
+}
+function changeExtra(key, d) {
+  extras[key] = Math.max(0, Math.min(9, (extras[key] || 0) + d));
+  if (!extras[key]) delete extras[key];
+  renderNutrition(false);
+  renderCompare();
+}
+
+/* ---------- daily goal ---------- */
+function goalFrom(kcal, protein) {
+  kcal = Math.round(kcal);
+  protein = Math.round(protein ?? (kcal * 0.15) / 4);
+  const fat = Math.round((kcal * 0.3) / 9);
+  const carbs = Math.max(0, Math.round((kcal - protein * 4 - fat * 9) / 4));
+  return { kcal, protein, carbs, fat, fiber: Math.round(kcal * 0.014), sugar: Math.round(kcal * 0.045), sodium_mg: 2300 };
+}
+function setGoal(g) {
+  goal = g;
+  ref = g || baseRef;
+  store.set("goal", g);
+  renderGoal();
+  if (current) { renderNutrition(false); renderCompare(); }
+  renderMeal(false);
+  toast(g ? t("goalSaved") : t("goalReset"));
+  if (g) confetti(30);
+}
+function renderGoal() {
+  const r = ref;
+  $("goalNow").innerHTML = `<span class="gn-k"><b>${fmt(r.kcal)}</b> ${t("kcal")}</span>` +
+    ["protein", "carbs", "fat"].map((k) => `<span class="gn m-${k}"><i></i>${t(k)} <b>${fmt(r[k])}</b> ${t("gram")}</span>`).join("") +
+    `<small>${goal ? t("nowGoal") : t("defGoal")}</small>`;
+  $("resetGoal").hidden = !goal;
+  $("presets").innerHTML = PRESETS.map((k) => `<button type="button" data-k="${k}" class="${goal && goal.kcal === k ? "on" : ""}"><b>${fmt(k)}</b><small>${t("p" + k)}</small></button>`).join("");
+  const cf = $("customForm");
+  ["kcal", "protein", "carbs", "fat"].forEach((k) => (cf.elements[k].value = Math.round(r[k])));
+  const saved = store.get("calc", null), f = $("calcForm");
+  if (saved) ["age", "height", "weight", "act"].forEach((k) => saved[k] && (f.elements[k].value = saved[k]));
+  document.querySelectorAll("#sexSeg button").forEach((b) => b.classList.toggle("on", b.dataset.v === sex));
+  document.querySelectorAll("#aimSeg button").forEach((b) => b.classList.toggle("on", b.dataset.v === aim));
+}
+function calcGoal() {
+  const f = $("calcForm");
+  const bad = ["age", "height", "weight"].filter((k) => !f.elements[k].checkValidity() || !f.elements[k].value);
+  ["age", "height", "weight"].forEach((k) => f.elements[k].classList.toggle("bad", bad.includes(k)));
+  if (bad.length) return toast(t("fixFields"));
+  const a = +f.elements.age.value, h = +f.elements.height.value, w = +f.elements.weight.value, act = +f.elements.act.value;
+  store.set("calc", { age: a, height: h, weight: w, act });
+  const bmr = 10 * w + 6.25 * h - 5 * a + (sex === "m" ? 5 : -161), tdee = bmr * act;
+  let kcal = aim === "lose" ? tdee - 500 : aim === "gain" ? tdee + 300 : tdee;
+  kcal = Math.max(sex === "m" ? 1500 : 1200, Math.round(kcal / 10) * 10);
+  const g = goalFrom(kcal, w * (aim === "lose" ? 1.6 : aim === "gain" ? 1.8 : 1.2));
+  const out = $("calcOut");
+  out.innerHTML = `<div class="co-tiles"><div><small>${t("bmr")}</small><b>${fmt(Math.round(bmr))}</b></div><div><small>${t("tdee")}</small><b>${fmt(Math.round(tdee))}</b></div><div class="hl"><small>${t("target")}</small><b>${fmt(g.kcal)}</b></div></div>
+    <div class="co-mac">${["protein", "carbs", "fat", "fiber"].map((k) => `<span class="m-${k}"><i></i>${t(k)} <b>${g[k]}</b> ${t("gram")}</span>`).join("")}</div>
+    <button class="btn primary wide" type="button" id="useCalc">${t("saveGoal")}</button>`;
+  out.hidden = false;
+  out.querySelectorAll(".co-tiles b").forEach((el) => { const v = Number(el.textContent.replace(/\D/g, "")); el.dataset.v = 0; countUp(el, v, 900); });
+  $("useCalc").onclick = () => setGoal(g);
 }
 
 /* ---------- my meal ---------- */
@@ -406,7 +645,7 @@ function renderMeal(animate = true) {
     const d = labels[m.key], n = scale(d.nutrition, m.p);
     const li = document.createElement("li");
     li.innerHTML = `<span class="mi-name"></span><span class="mi-p">×${m.p}</span><b>${n.kcal}</b><button class="x" type="button" aria-label="${t("remove")}">✕</button>`;
-    li.querySelector(".mi-name").textContent = nm(d);
+    li.querySelector(".mi-name").textContent = (d.addon ? d.ic + " " : "") + nm(d);
     li.querySelector(".x").onclick = () => { li.classList.add("bye"); setTimeout(() => { meal.splice(i, 1); renderMeal(); }, 280); };
     ul.appendChild(li);
   });
@@ -417,6 +656,10 @@ function renderMeal(animate = true) {
   [s.protein, s.carbs, s.fat].forEach((v, i) => (st[i].style.flexGrow = Math.max(0.001, v)));
   macroList($("mealMacros"), tot, false);
   dailyBars($("mealDaily"), tot);
+  const left = Math.round(ref.kcal - tot.kcal);
+  $("mealLeft").textContent = Math.abs(left) < 25 ? t("hitK") : left > 0
+    ? t("leftK", { n: fmt(left), p: fmt(Math.max(0, Math.round(ref.protein - tot.protein))) }) : t("overK", { n: fmt(-left) });
+  $("mealLeft").classList.toggle("over", left <= -25);
 }
 
 function flyToMeal() {
@@ -470,23 +713,37 @@ function renderHistory() {
 function fillPicker() {
   const q = $("pickSearch").value.trim().toLowerCase();
   const grid = $("pickGrid");
+  $("pickFilters").innerHTML = Object.keys(PICK_FILTERS).map((k) => `<button type="button" data-f="${k}" class="${k === pickFilter ? "on" : ""}">${t("pf_" + k)}</button>`).join("");
   grid.innerHTML = "";
-  all.filter((d) => !q || d.en.toLowerCase().includes(q) || d.he.includes(q))
-    .sort((a, b) => nm(a).localeCompare(nm(b), lang))
-    .forEach((d) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.innerHTML = `<span class="pi">${(d.groups || []).map((g) => GROUP_ICON[g]).join("")}</span><b></b><small>${d.nutrition.kcal} ${t("kcal")}</small>`;
-      b.querySelector("b").textContent = nm(d);
-      b.onclick = () => { $("picker").close(); choose(d.key); };
-      grid.appendChild(b);
-    });
+  const list = all.filter((d) => (!q || d.en.toLowerCase().includes(q) || d.he.includes(q)) && PICK_FILTERS[pickFilter](d)
+      && !(pickMode === "compare" && d.key === current?.key))
+    .sort((a, b) => nm(a).localeCompare(nm(b), lang));
+  list.forEach((d) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.innerHTML = `<span class="pi">${(d.groups || []).map((g) => GROUP_ICON[g]).join("")}</span><b></b><small>${d.nutrition.kcal} ${t("kcal")} · ${t("protein")} ${fmt(d.nutrition.protein)}</small>`;
+    b.querySelector("b").textContent = nm(d);
+    b.onclick = () => {
+      $("picker").close();
+      if (pickMode === "compare") {
+        cmpKey = d.key; cmpP = 1;
+        renderCompare();
+        setTimeout(() => $("compare").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" }), 60);
+      } else choose(d.key);
+    };
+    grid.appendChild(b);
+  });
+  if (!list.length) grid.innerHTML = `<p class="empty">${t("noMatch")}</p>`;
 }
-function openPicker() {
+function openPicker(m = "pick") {
+  pickMode = m === "compare" && current ? "compare" : "pick";
+  $("pickTitle").hidden = pickMode !== "compare";
+  if (pickMode === "compare") $("pickTitle").textContent = t("pickCmp", { d: nm(current) });
   $("pickSearch").value = "";
+  pickFilter = "all";
   fillPicker();
   $("picker").showModal();
-  $("pickSearch").focus();
+  if (matchMedia("(hover: hover)").matches) $("pickSearch").focus();
 }
 function choose(key) {
   const d = labels[key];
@@ -566,7 +823,7 @@ async function analyze(blob, src) {
     const items = mode() === "api" ? await predictApi(blob) : await predictBrowser(img);
     picked = false;
     portions = 1;
-    if (!items.length) { toast(t("notFood")); setTimeout(openPicker, 900); }
+    if (!items.length) { toast(t("notFood")); setTimeout(() => openPicker(), 900); }
     else { render(items); remember(items[0].key); }
   } catch (e) {
     toast(e.message || t("apiDown"));
@@ -581,8 +838,9 @@ function setup() {
   $("langBtn").onclick = () => { lang = lang === "he" ? "en" : "he"; store.set("lang", lang); applyLang(); };
   $("pickBtn").onclick = () => $("file").click();
   $("camBtn").onclick = () => $("camera").click();
-  $("browseBtn").onclick = openPicker;
-  $("fixBtn").onclick = openPicker;
+  $("browseBtn").onclick = () => openPicker();
+  $("fixBtn").onclick = () => openPicker();
+  $("pickFilters").onclick = (e) => { const f = e.target.closest("[data-f]"); if (f) { pickFilter = f.dataset.f; fillPicker(); } };
   $("pickSearch").oninput = fillPicker;
   $("picker").addEventListener("click", (e) => e.target === $("picker") && $("picker").close());
   [$("file"), $("camera")].forEach((inp) => (inp.onchange = () => inp.files[0] && analyze(inp.files[0])));
@@ -621,6 +879,7 @@ function setup() {
     if (!current) return;
     const ex = meal.find((m) => m.key === current.key);
     if (ex) ex.p += portions; else meal.push({ key: current.key, p: portions });
+    Object.entries(extras).forEach(([k, q]) => { const e = meal.find((m) => m.key === k); if (e) e.p += q; else meal.push({ key: k, p: q }); });
     renderMeal();
     flyToMeal();
     toast(t("added"));
@@ -647,10 +906,53 @@ function setup() {
   $("shareBtn").onclick = shareCard;
   $("pinBtn").onclick = () => {
     if (!current) return;
-    if (pinned && pinned.key === current.key) pinned = null;
-    else { pinned = { key: current.key, n: current.nutrition, p: portions }; toast(t("pinned")); }
-    renderNutrition(false);
-    renderCompare();
+    if (cmpKey) { cmpKey = null; renderCompare(); } else openPicker("compare");
+  };
+  $("compare").onclick = (e) => {
+    const bp = e.target.closest("[data-bp]"), act = e.target.closest("[data-cmp]")?.dataset.cmp;
+    if (bp) { cmpP = Number(bp.dataset.bp); renderCompare(); }
+    else if (act === "close") { cmpKey = null; renderCompare(); $("pinBtn").scrollIntoView({ block: "center" }); }
+    else if (act === "other") openPicker("compare");
+    else if (act === "swap") { const old = current.key; choose(cmpKey); cmpKey = old; cmpP = 1; renderCompare(); }
+  };
+  $("boostGoals").onclick = (e) => {
+    const b = e.target.closest("[data-goal]");
+    if (!b) return;
+    boostGoal = boostGoal === b.dataset.goal ? null : b.dataset.goal;
+    renderBoost();
+  };
+  $("addonGrid").onclick = (e) => {
+    const b = e.target.closest("[data-add]");
+    if (!b) return;
+    changeExtra(b.dataset.add, 1);
+    const nb = $("addonGrid").querySelector(`[data-add="${b.dataset.add}"]`);
+    nb?.classList.add("bump");
+  };
+  $("extrasList").onclick = (e) => {
+    const d = e.target.closest("[data-dec]"), i = e.target.closest("[data-inc]");
+    if (d) changeExtra(d.dataset.dec, -1); else if (i) changeExtra(i.dataset.inc, 1);
+  };
+  $("clearExtras").onclick = () => { extras = {}; renderNutrition(false); renderCompare(); };
+
+  /* daily goal */
+  document.querySelectorAll(".goal-link").forEach((b) => (b.onclick = () => $("goal").scrollIntoView({ behavior: "smooth", block: "start" })));
+  $("goalTabs").onclick = (e) => {
+    const b = e.target.closest("[data-tab]");
+    if (!b) return;
+    document.querySelectorAll("#goalTabs button").forEach((x) => x.classList.toggle("on", x === b));
+    document.querySelectorAll(".gpane").forEach((p) => (p.hidden = p.dataset.pane !== b.dataset.tab));
+  };
+  $("presets").onclick = (e) => { const b = e.target.closest("[data-k]"); if (b) setGoal(goalFrom(Number(b.dataset.k))); };
+  $("resetGoal").onclick = () => setGoal(null);
+  $("sexSeg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sex = b.dataset.v; store.set("sex", sex); renderGoal(); } };
+  $("aimSeg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { aim = b.dataset.v; store.set("aim", aim); renderGoal(); } };
+  $("calcForm").onsubmit = (e) => { e.preventDefault(); calcGoal(); };
+  $("customForm").onsubmit = (e) => {
+    e.preventDefault();
+    const f = e.target;
+    if (!f.reportValidity()) return;
+    const kcal = +f.elements.kcal.value;
+    setGoal({ ...goalFrom(kcal), protein: +f.elements.protein.value, carbs: +f.elements.carbs.value, fat: +f.elements.fat.value });
   };
 
   document.querySelectorAll("input[name=mode]").forEach((r) => (r.onchange = () => {

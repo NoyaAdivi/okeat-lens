@@ -31,110 +31,110 @@ window.NOYA_FAQ = {
    "t": "scan",
    "he": [
     "איך מזהים מנה?",
-    "גוררים תמונה, מדביקים עם Ctrl+V, מצלמים או בוחרים מנה מהרשימה. תוך שנייה מופיע מה זה, כמה הזיהוי בטוח ועוד ניחושים."
+    "מצלמים, גוררים תמונה או בוחרים מהרשימה."
    ],
    "en": [
     "How do I identify a dish?",
-    "Drop a photo, paste with Ctrl+V, take a picture or pick a dish from the list. Within a second you see what it is, how confident the match is, and other guesses."
+    "Snap, drop a photo or pick from the list."
    ]
   },
   {
    "t": "scan",
    "he": [
-    "מה ההבדל בין שני מנועי הזיהוי?",
-    "\"בדפדפן\" מריץ MobileNet על המכשיר ומכיר כ-50 מאכלים בלי שרת. \"Food-101\" הוא מודל שאימנתי על 101 מנות ורץ כ-API בפייתון, מדויק יותר אבל צריך להפעיל אותו."
+    "הזיהוי טעה?",
+    "לוחצים \"לא זה?\" ובוחרים את המנה הנכונה."
    ],
    "en": [
-    "What is the difference between the two engines?",
-    "\"In browser\" runs MobileNet on your device and knows about 50 foods with no server. \"Food-101\" is a model I trained on 101 dishes, running as a Python API: more accurate, but you need to start it."
+    "Wrong match?",
+    "Tap \"Not this?\" and pick the right dish."
    ]
   },
   {
    "t": "scan",
    "he": [
-    "הזיהוי טעה, מה עושים?",
-    "לוחצים \"לא זה? בחירת מנה אחרת\" או על אחד הניחושים הנוספים, וכל הנתונים מתעדכנים מיד."
+    "מה ההבדל בין המנועים?",
+    "\"בדפדפן\" מהיר ובלי שרת. Food-101 מדויק יותר אבל צריך API."
    ],
    "en": [
-    "The match is wrong, what now?",
-    "Tap \"Not this? Pick another dish\" or one of the other guesses, and all the numbers update right away."
+    "Which engine should I use?",
+    "\"Browser\" is instant with no server. Food-101 is more accurate but needs the API."
    ]
   },
   {
    "t": "food",
    "he": [
-    "מאיפה מגיעים ערכי התזונה?",
-    "מערכי ייחוס למנה טיפוסית, לפי 2,000 קלוריות ליום. משנים את הכמות ב\"כמה אכלתם?\" והכל מחושב מחדש."
+    "איך מוסיפים חלבון או פחמימה לצלחת?",
+    "ב\"לשדרג את הצלחת\" בוחרים מטרה ולוחצים על תוספת."
    ],
    "en": [
-    "Where do the nutrition values come from?",
-    "From reference values for a typical serving, based on 2,000 calories a day. Change the amount under \"How much did you eat?\" and everything recalculates."
+    "How do I add protein or carbs?",
+    "In \"Boost the plate\" pick a goal and tap an extra."
    ]
   },
   {
    "t": "food",
    "he": [
-    "אפשר לסמוך על תגיות כשרות, טבעוני וללא גלוטן?",
-    "הן רמזים לפי המתכון הנפוץ ולא מידע מאומת. ב-Okeat רק הקהילה מאשרת מקומות, ולכן יש כפתור שמוביל לחיפוש שם."
+    "איך משנים את היעד היומי?",
+    "ב\"היעד היומי שלי\": בחירה מהירה, מחשבון או ידני."
    ],
    "en": [
-    "Can I trust the kosher, vegan and gluten free tags?",
-    "They are hints based on the common recipe, not verified facts. On Okeat only the community verifies places, which is why there is a button that searches there."
+    "How do I set my daily goal?",
+    "In \"My daily goal\": quick pick, calculator or manual."
    ]
   },
   {
    "t": "food",
    "he": [
-    "מה זה \"הארוחה שלי\"?",
-    "מוסיפים כמה מנות ומקבלים סיכום של כל הארוחה: קלוריות, חלבון, פחמימות ואבות מזון. אפשר גם להשוות בין שתי מנות."
+    "איך משווים שתי מנות?",
+    "לוחצים \"השוואה\" ובוחרים מנה שנייה."
    ],
    "en": [
-    "What is \"My meal\"?",
-    "Add a few dishes and get a summary of the whole meal: calories, protein, carbs and food groups. You can also compare two dishes side by side."
+    "How do I compare dishes?",
+    "Tap \"Compare\" and pick a second dish."
+   ]
+  },
+  {
+   "t": "food",
+   "he": [
+    "אפשר לסמוך על התגיות?",
+    "הן רמזים בלבד. ב-Okeat הקהילה מאשרת."
+   ],
+   "en": [
+    "Can I trust the tags?",
+    "They are hints only. On Okeat the community verifies."
    ]
   },
   {
    "t": "privacy",
    "he": [
-    "התמונה שלי נשלחת לאנשהו?",
-    "במנוע \"בדפדפן\" התמונה לא יוצאת מהמכשיר. במנוע Food-101 היא נשלחת רק לכתובת ה-API שאתם מגדירים, בדרך כלל המחשב שלכם."
+    "התמונה נשלחת לאנשהו?",
+    "בדפדפן היא לא יוצאת מהמכשיר."
    ],
    "en": [
     "Is my photo sent anywhere?",
-    "With the \"In browser\" engine the photo never leaves your device. With Food-101 it goes only to the API address you set, usually your own computer."
+    "In browser mode it never leaves your device."
    ]
   },
   {
    "t": "app",
    "he": [
-    "אפשר להתקין את Okeat Lens כאפליקציה?",
-    "כן. בכרום או באדג׳ לוחצים על כפתור ההתקנה שמופיע בתחתית המסך או בשורת הכתובת, ובאייפון בוחרים שיתוף ואז \"הוספה למסך הבית\". האפליקציה נפתחת בחלון משלה עם אייקון משלה."
+    "אפשר להתקין כאפליקציה?",
+    "כן, מכפתור ההתקנה או \"הוספה למסך הבית\"."
    ],
    "en": [
-    "Can I install Okeat Lens as an app?",
-    "Yes. In Chrome or Edge tap the install button at the bottom of the screen or in the address bar. On iPhone tap Share, then \"Add to Home Screen\". It opens in its own window with its own icon."
-   ]
-  },
-  {
-   "t": "app",
-   "he": [
-    "זה עובד גם בלי אינטרנט?",
-    "אחרי הביקור הראשון הקבצים של האתר נשמרים במכשיר, כך שהוא נפתח מהר ועובד גם כשהחיבור נופל. פעולות שצריכות שרת חיצוני יחכו שהחיבור יחזור."
-   ],
-   "en": [
-    "Does it work offline?",
-    "After your first visit the site files are kept on your device, so it opens fast and keeps working when the connection drops. Anything that needs an outside server waits until you are back online."
+    "Can I install it?",
+    "Yes, via the install button or \"Add to Home Screen\"."
    ]
   },
   {
    "t": "app",
    "he": [
     "זה עולה כסף?",
-    "לא. הכל חינם, בלי פרסומות ובלי הרשמה, והקוד פתוח בגיטהאב."
+    "לא. חינם, בלי פרסומות ובלי הרשמה."
    ],
    "en": [
     "Does it cost anything?",
-    "No. It is free, with no ads and no sign up, and the code is open on GitHub."
+    "No. Free, no ads, no sign up."
    ]
   }
  ]
