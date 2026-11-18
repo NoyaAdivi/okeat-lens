@@ -122,7 +122,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-he.svg" width="100%" alt="ככה זה נראה"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screen-he.png" width="80%" alt="Okeat Lens מזהה חומוס בביטחון של 93%: 216 קלוריות, אבות המזון וצלחת מאוזנת"></a>
+  <a href="https://noyaadivi.github.io/okeat-lens/"><img src="docs/images/screenshot-he.png" width="80%" alt="דף הבית של Okeat Lens"></a>
 </p>
 
 <p align="center">
