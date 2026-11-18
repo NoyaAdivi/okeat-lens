@@ -164,6 +164,7 @@ flowchart RL
 | **אימון** | אפוק חימום עם רשת בסיס קפואה, ואז כוונון מלא עם AdamW, ‏cosine schedule, ‏label smoothing ו-mixed precision |
 | **הגדלת נתונים** | חיתוך אקראי, היפוך אופקי, שינויי צבע |
 | **מדדים** | דיוק top-1 ו-top-5 על חלק הבדיקה, נשמר ב-`models/metrics.json` |
+| **לאמן בעצמך** | [![Open in Colab](https://img.shields.io/badge/%D7%9C%D7%90%D7%99%D7%9E%D7%95%D7%9F_%D7%91%D7%A7%D7%95%D7%9C%D7%90%D7%91-FFE7B8?style=flat&logo=googlecolab&logoColor=A0641E)](https://colab.research.google.com/github/NoyaAdivi/okeat-lens/blob/main/train_colab.ipynb) על GPU חינמי, בערך שעתיים |
 | **דמו בדפדפן** | [MobileNet ב-TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), ממופה לכ-40 מאכלים, עובד בלי שרת |
 
 <details>

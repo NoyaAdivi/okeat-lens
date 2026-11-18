@@ -162,6 +162,7 @@ flowchart LR
 | **Training** | 1 warm-up epoch with a frozen backbone, then full fine-tuning with AdamW, cosine schedule, label smoothing and mixed precision |
 | **Augmentation** | random resized crop, horizontal flip, color jitter |
 | **Metrics** | top-1 and top-5 accuracy on the test split, saved to `models/metrics.json` |
+| **Train it yourself** | [![Open in Colab](https://img.shields.io/badge/Train_on_Colab-FFE7B8?style=flat&logo=googlecolab&logoColor=A0641E)](https://colab.research.google.com/github/NoyaAdivi/okeat-lens/blob/main/train_colab.ipynb) on a free GPU, about 2 hours |
 | **Browser demo** | [MobileNet in TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), mapped to about 40 foods, so it works with no server |
 
 <details>
