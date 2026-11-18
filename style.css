@@ -369,6 +369,8 @@ html[data-theme="dark"] .presets button{color:#2C2668}
 .presets button:hover{transform:translateY(-4px)}
 .presets button.on{box-shadow:0 0 0 3px var(--lav-d);transform:scale(1.04)}
 .presets b{font:700 1.3rem Fredoka,Rubik,sans-serif}.presets small{font-weight:600;opacity:.8}
+.goal > .sub.small{margin:22px 0 0;padding-top:12px;border-top:1.5px dashed var(--lav);text-align:center;position:relative;z-index:1}
+.presets{padding:6px 4px}
 .calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:6px}
 .calc-grid .field{display:grid;gap:6px;font-weight:600;margin:0}
 .calc-grid .wide{grid-column:1/-1}

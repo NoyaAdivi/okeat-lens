@@ -1,5 +1,5 @@
 /* Service worker: makes the site an installable app that also opens offline. */
-const VERSION = 'okeat-lens-v3';
+const VERSION = 'okeat-lens-v4';
 const SHELL = ["index.html", "style.css", "app.js", "noya-kit.js", "logo.svg", "labels.json", "noya-app.js", "faq.js", "manifest.webmanifest", "icons/icon-192.png"];
 
 self.addEventListener('install', (e) => {
