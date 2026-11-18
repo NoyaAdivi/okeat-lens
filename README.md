@@ -96,7 +96,7 @@
 
 <a name="app"></a>
 <h3 align="center">📲 App and FAQ <sub><sup>new</sup></sub></h3>
-<p align="center">Okeat Lens installs as a real app with its own icon, and the site answers common questions by topic.</p>
+<p align="center">Okeat Lens can be installed as a real app with its own icon, and the site answers common questions by topic.</p>
 
 <table>
   <tr valign="top">
@@ -150,7 +150,7 @@ flowchart LR
   style G fill:#FFD5C9,stroke:#A8483A,color:#5C2A20
 ```
 
-<p align="center"><sub>Diet hints describe a typical recipe. On Okeat only the community can verify a place, so these are always labelled as hints.</sub></p>
+<p align="center"><sub>Diet hints describe a typical recipe. On Okeat only the community can verify a place, so these are always labeled as hints.</sub></p>
 
 <a name="the-model"></a>
 <p align="center"><a href="#rest-api"><img src="docs/readme/model-en.svg" width="100%" alt="The model"></a></p>
@@ -162,7 +162,7 @@ flowchart LR
 | **Training** | 1 warm-up epoch with a frozen backbone, then full fine-tuning with AdamW, cosine schedule, label smoothing and mixed precision |
 | **Augmentation** | random resized crop, horizontal flip, color jitter |
 | **Metrics** | top-1 and top-5 accuracy on the test split, saved to `models/metrics.json` |
-| **Browser demo** | [MobileNet in TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), mapped to about 20 foods, so it works with no server |
+| **Browser demo** | [MobileNet in TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), mapped to about 40 foods, so it works with no server |
 
 <details>
 <summary><b>🥗 How diet hints are decided</b></summary>

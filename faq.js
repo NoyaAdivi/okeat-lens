@@ -134,7 +134,7 @@ window.NOYA_FAQ = {
    ],
    "en": [
     "Does it cost anything?",
-    "No. Free, no ads, no sign up."
+    "No. Free, no ads, no sign-up."
    ]
   }
  ]

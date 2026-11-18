@@ -30,7 +30,7 @@
   <tr>
     <td align="center" width="25%"><a href="#the-model"><b>🍽️ 101</b></a><br><sub>מנות שהוא מזהה</sub></td>
     <td align="center" width="25%"><a href="#the-model"><b>🧠 MobileNetV3</b></a><br><sub>מאומן על Food-101</sub></td>
-    <td align="center" width="25%"><a href="README.md"><b>🌍 עב · EN</b></a><br><sub>כל מנה בשתי השפות</sub></td>
+    <td align="center" width="25%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>כל מנה בשתי השפות</sub></td>
     <td align="center" width="25%"><a href="https://github.com/NoyaAdivi/okeat-lens/actions/workflows/tests.yml"><b>🧪 CI</b></a><br><sub>בדיקות בכל push</sub></td>
   </tr>
   <tr valign="top">
@@ -38,7 +38,7 @@
       <p><b>🍽️ מה יש במנה</b></p>
       <ul>
         <li><b>קלוריות, חלבון, פחמימות, שומן</b>, סיבים, סוכר ונתרן</li>
-        <li><b>עוגה מונפשת</b> ואחוז מהצריכה היומית</li>
+        <li><b>גרף עוגה מונפש</b> ואחוז מהצריכה היומית</li>
         <li><b>בחירת כמות</b>: ½, 1, 1½ או 2 מנות</li>
       </ul>
     </td>
@@ -164,7 +164,7 @@ flowchart RL
 | **אימון** | אפוק חימום עם רשת בסיס קפואה, ואז כוונון מלא עם AdamW, ‏cosine schedule, ‏label smoothing ו-mixed precision |
 | **הגדלת נתונים** | חיתוך אקראי, היפוך אופקי, שינויי צבע |
 | **מדדים** | דיוק top-1 ו-top-5 על חלק הבדיקה, נשמר ב-`models/metrics.json` |
-| **דמו בדפדפן** | [MobileNet ב-TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), ממופה לכ-20 מאכלים, עובד בלי שרת |
+| **דמו בדפדפן** | [MobileNet ב-TensorFlow.js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet), ממופה לכ-40 מאכלים, עובד בלי שרת |
 
 <details>
 <summary><b>🥗 איך נקבעים הרמזים</b></summary>

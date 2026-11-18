@@ -30,7 +30,7 @@ sequenceDiagram
 ```
 
 * `dish` is `null` when the best guess is under 15% confidence, and then `hints` is empty.
-* `hints.verified` is **always `false`**. These hints come from a typical recipe, so Okeat treats them like its other automatic info: labelled, and never counted as community-verified.
+* `hints.verified` is **always `false`**. These hints come from a typical recipe, so Okeat treats them like its other automatic info: labeled, and never counted as community-verified.
 
 ## Turning hints into Okeat filters
 
