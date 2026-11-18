@@ -202,7 +202,7 @@ html[data-theme="dark"] .seg-pill button.on{color:#1B1728}
 .hplate .rim{fill:var(--surface);stroke:var(--lav);stroke-width:6}
 .hplate .q{fill:var(--lav);opacity:.35;stroke:var(--surface);stroke-width:3;transition:fill .6s,opacity .6s}
 .hplate .q.on{opacity:1}.hplate .q-veg.on{fill:var(--mint)}.hplate .q-grain.on{fill:var(--sun)}.hplate .q-prot.on{fill:var(--pink)}.hplate .q-dairy.on{fill:#DCEBFF}
-.hplate text{font-size:28px}.hplate text.sm{font-size:16px}
+.hplate{direction:ltr}.hplate text{font-size:28px;text-anchor:middle;dominant-baseline:central}.hplate text.sm{font-size:16px}
 .legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .legend span{padding:5px 10px;border-radius:999px;font-size:.85rem;font-weight:600;background:var(--surface);opacity:.45;transition:opacity .4s,transform .4s}
 .legend span.on{opacity:1;transform:translateY(-1px);box-shadow:0 4px 12px -6px var(--lav-d)}
